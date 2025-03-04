@@ -302,16 +302,6 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className="flex w-full justify-center bg-[var(--background)]">
-        <div className="flex w-full max-w-screen-lg flex-col justify-center py-16 sm:flex-row sm:items-start sm:gap-8">
-          <div className="mx-auto max-w-full sm:w-1/2">
-            <EmailForm />
-          </div>
-          <div className="flex flex-col items-center gap-4 sm:w-1/2 sm:items-start">
-            <p className="text-center text-xl font-medium text-white sm:text-left"></p>
-          </div>
-        </div>
-      </div>
     </>
   );
 }

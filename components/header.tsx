@@ -96,11 +96,6 @@ export default function Header() {
               {/* <motion.li variants={itemVariants}>
                   <Link href="/volunteer" className="hover:underline decoration-2">Get Involved</Link>
                 </motion.li> */}
-              <motion.li variants={itemVariants}>
-                <Link href="/contact" className="decoration-2 hover:underline">
-                  Donate
-                </Link>
-              </motion.li>
             </motion.ul>
           </motion.nav>
         </div>

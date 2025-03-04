@@ -60,54 +60,37 @@ export function EmailForm() {
 
   return (
     <>
-      <Card className="min-w-full rounded-lg bg-white/70 shadow-2xl backdrop-blur-sm">
-        <CardHeader>
-          <CardTitle className="mb-1 font-bold">Stay Connected</CardTitle>
-          <CardDescription className="text-black">
-            Sign up for our email list to stay informed about our latest
-            projects, success stories, and ways you can get involved.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="font-semibold">Name</FormLabel>
-                    <FormControl className="bg-white/60">
-                      <Input {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="font-semibold">
-                      Email address
-                    </FormLabel>
-                    <FormControl className="bg-white/60">
-                      <Input {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <div className="flex justify-end">
-                <Button type="submit">Submit</Button>
-              </div>
-            </form>
-          </Form>
-        </CardContent>
-      </Card>
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="mt-6 sm:flex sm:max-w-md lg:mt-0"
+        >
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem className="flex-1">
+                <FormControl className="bg-white/5">
+                  <Input
+                    placeholder="Enter your email"
+                    className="w-full min-w-0 rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[--yellow-5] sm:w-56 sm:text-sm/6"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <div className="mt-4 sm:ml-4 sm:mt-0 sm:shrink-0">
+            <Button
+              type="submit"
+              className="flex w-full items-center justify-center rounded-md bg-[--yellow-5] px-3 py-2 text-sm font-semibold text-[--background] shadow-sm hover:bg-[--yellow-4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--yellow-5]"
+            >
+              Subscribe
+            </Button>
+          </div>
+        </form>
+      </Form>
     </>
   );
 }
