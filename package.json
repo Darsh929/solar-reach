@@ -1,6 +1,6 @@
 {
   "name": "solar-reach",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -10,26 +10,26 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
-    "@paypal/react-paypal-js": "^8.8.2",
     "@radix-ui/react-label": "^2.1.1",
     "@radix-ui/react-separator": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.1",
+    "axios": "^1.8.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^11.15.0",
-    "lucide-react": "^0.469.0",
-    "motion": "^11.15.0",
-    "next": "15.1.3",
+    "next": "^15.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.2",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.24.1"
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@ianvs/prettier-plugin-sort-imports": "^4.4.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+    "@tailwindcss/cli": "^4.0.15",
+    "@tailwindcss/postcss": "^4.0.15",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
@@ -37,9 +37,9 @@
     "eslint-config-next": "15.1.3",
     "eslint-config-prettier": "^9.1.0",
     "postcss": "^8",
-    "prettier": "^3.4.2",
-    "prettier-plugin-tailwindcss": "^0.6.9",
-    "tailwindcss": "^3.4.1",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^3.4.17",
     "typescript": "^5"
   }
 }

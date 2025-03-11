@@ -2,44 +2,35 @@
 
 import { Button } from "@/components/ui/button";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
   Form,
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 const zString = z.string().trim().min(1).max(10000);
 
-const volunteerSchema = z.object({
-  name: zString,
+const emailSchema = z.object({
   email: zString.email(),
 });
 
 const fieldIds = {
-  name: "1335873332",
   email: "1825697131",
 };
 
 export function EmailForm() {
-  const form = useForm<z.infer<typeof volunteerSchema>>({
-    resolver: zodResolver(volunteerSchema),
+  const form = useForm<z.infer<typeof emailSchema>>({
+    resolver: zodResolver(emailSchema),
     defaultValues: {},
   });
 
-  function onSubmit(values: z.infer<typeof volunteerSchema>) {
+  function onSubmit(values: z.infer<typeof emailSchema>) {
     const baseUrl =
       "https://docs.google.com/forms/u/0/d/e/1FAIpQLSck7xgzEnACKgVz1LkIPcRAqTafc01DUwpEhAqeoIVRW1TF1A/formResponse?";
     const params = new URLSearchParams();
@@ -55,7 +46,9 @@ export function EmailForm() {
       }
     });
 
-    window.location.href = `${baseUrl}${params.toString()}`;
+    axios.post(`${baseUrl}${params.toString()}`);
+    form.reset();
+    window.location.href = window.location.pathname + "?success=1";
   }
 
   return (

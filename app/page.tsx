@@ -1,13 +1,5 @@
 "use client";
 
-// TODO:
-// priority
-// cursor-pointer
-// Cantarell VF
-// Our Events
-// Group
-// insta gofundme
-import { EmailForm } from "@/components/email-form";
 import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
