@@ -35,9 +35,9 @@ export default function Footer() {
             src="/logo.svg"
             width={50}
             height={50}
-            className="-mb-4"
+            className="-mb-6"
           />
-          <div className="mb-4 mt-10 md:mt-0 xl:col-span-2 xl:flex xl:justify-end">
+          <div className="flex justify-end">
             <div className="flex flex-row items-center space-x-4">
               <ul role="list" className="flex flex-row space-x-4">
                 {navigation.nav.map((item) => (
@@ -51,7 +51,7 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-              <div className="flex gap-x-6 md:order-2">
+              <div className="flex gap-x-6">
                 {navigation.social.map((item) => (
                   <a
                     key={item.name}
@@ -66,20 +66,17 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="min-w-xl border-t border-white/10 pt-8 lg:flex lg:items-center lg:justify-between">
+        <div className="min-w-xl mt-4 border-y border-white/10 py-8 sm:flex sm:items-center sm:justify-between">
           <div>
             <h3 className="text-sm/6 font-semibold text-white">
               Stay Connected
             </h3>
-            <p className="mt-2 max-w-sm text-sm/6 text-gray-300">
+            <p className="mt-2 max-w-lg text-sm/6 text-gray-300">
               Sign up for our newsletter to stay informed about our latest
               projects, success stories, and ways you can get involved.
             </p>
           </div>
           <EmailForm />
-        </div>
-        <div className="mt-8 border-t border-white/10 pt-4">
-          <p className="mt-8 text-sm/6 text-gray-400 md:order-1 md:mt-0"></p>
         </div>
       </div>
     </footer>

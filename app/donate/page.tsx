@@ -11,8 +11,8 @@ export default function Donate() {
         </h1>
 
         <p className="mt-6 text-2xl leading-7">
-          At Solar Reach, we&apos;re bringing light and hope to communities without
-          reliable electricity.
+          At Solar Reach, we&apos;re bringing light and hope to communities
+          without reliable electricity.
           <br />
           <br />
           Your donation directly funds sustainable, solar-powered lights that
@@ -39,11 +39,19 @@ export default function Donate() {
           <Button
             onClick={() =>
               window.open(
+<<<<<<< HEAD
                 "https://www.paypal.com/donate?token=nkmTNWLyuCCkRXJ_Tj-lLuZX9JiNcuna5O5jGwhjo9gdJNhRM6lcFSvY8Mf9NVaCr7jnBFzuA9ensI7x",
                 "_blank",
               )
             }
             className="focus:shadow-outline h-12 w-full rounded-lg bg-indigo-700 px-6 text-indigo-100 transition-colors duration-150 hover:bg-indigo-800"
+=======
+                "https://www.paypal.com/donate/?hosted_button_id=QED7FXY72CW9Q",
+                "_blank",
+              )
+            }
+            className="w-full max-w-xs cursor-pointer rounded-lg border-none bg-blue-500 px-6 py-3 text-white transition-all hover:bg-blue-600 sm:max-w-sm md:max-w-md lg:max-w-lg"
+>>>>>>> 58d7c74 (e)
           >
             Donate via PayPal
           </Button>
