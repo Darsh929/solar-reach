@@ -38,7 +38,7 @@ export default function Header() {
   }, []);
 
   return (
-    <div className="absolute -top-5 left-0 right-0 z-50 mx-auto ml-0 flex max-w-screen-lg flex-row items-center justify-between px-6 sm:top-0 sm:ml-auto">
+    <div className="absolute -top-5 right-0 left-0 z-50 mx-auto ml-0 flex max-w-(--breakpoint-lg) flex-row items-center justify-between px-6 sm:top-0 sm:ml-auto">
       <Image
         src="/logo_full_dark.svg"
         alt="Solar Reach logo"
@@ -52,7 +52,7 @@ export default function Header() {
         <div onMouseEnter={() => setIsHovered(true)}>
           <NavIcon width={navSize} height={navSize} isHovered={isHovered} />
         </div>
-        <div className="absolute right-2 top-12 w-40 text-right text-xl font-extrabold uppercase text-[var(--background)]">
+        <div className="absolute top-12 right-2 w-40 text-right text-xl font-extrabold text-[var(--background)] uppercase">
           <motion.nav initial={false} animate={isHovered ? "open" : "closed"}>
             <motion.ul
               variants={{

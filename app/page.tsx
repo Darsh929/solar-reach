@@ -44,7 +44,7 @@ export default function Home() {
   return (
     <>
       <div
-        className={`min-w-screen flex min-h-screen flex-col items-center justify-center gap-16 overflow-hidden p-8 pb-20 font-[Cantarell] text-[var(--background)] transition-colors duration-1000 sm:p-20 ${isLightOn ? "" : ""}`}
+        className={`flex min-h-screen min-w-screen flex-col items-center justify-center gap-16 overflow-hidden p-8 pb-20 font-[Cantarell] text-[var(--background)] transition-colors duration-1000 sm:p-20 ${isLightOn ? "" : ""}`}
         onClick={animate}
         style={{ backgroundColor }}
       >
@@ -124,7 +124,7 @@ export default function Home() {
           {!isLightOn && (
             <div className="absolute inset-0 z-50 cursor-pointer"></div>
           )}
-          <div className="min-w-screen -mt-20 flex min-h-screen flex-col items-start justify-center sm:items-start">
+          <div className="-mt-20 flex min-h-screen min-w-screen flex-col items-start justify-center sm:items-start">
             <div className="relative flex h-full w-full items-center justify-center">
               <svg
                 ref={svgRef}
@@ -285,10 +285,10 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-6 flex flex-col items-center gap-8 sm:-mt-[70px] sm:items-start">
-          <h2 className="mx-auto max-w-screen-md text-center text-2xl font-extrabold text-[var(--background)] sm:text-3xl">
+          <h2 className="mx-auto max-w-(--breakpoint-md) text-center text-2xl font-extrabold text-[var(--background)] sm:text-3xl">
             Brightening futures with solar
           </h2>
-          <p className="mx-auto max-w-screen-md text-center text-lg font-medium text-[var(--background)] sm:text-xl">
+          <p className="mx-auto max-w-(--breakpoint-md) text-center text-lg font-medium text-[var(--background)] sm:text-xl">
             At Solar Reach, we&apos;re committed to bringing sustainable,
             solar-powered light to areas where energy resources are scarce.
           </p>

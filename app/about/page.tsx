@@ -25,7 +25,7 @@ export default function About() {
   ];
 
   return (
-    <div className="mx-auto flex w-full max-w-screen-lg flex-col px-6 pb-24 sm:px-20">
+    <div className="mx-auto flex w-full max-w-(--breakpoint-lg) flex-col px-6 pb-24 sm:px-20">
       <h1 className="mt-28 text-xl font-bold uppercase sm:mt-64">
         Our Mission
       </h1>
@@ -55,9 +55,9 @@ export default function About() {
         role in bringing light to the places that need it most.
       </p>
       <h1 className="mt-8 text-xl font-bold uppercase sm:mt-16">Our Team</h1>
-      <Separator className="mt-2 stroke-background"></Separator>
+      <Separator className="stroke-background mt-2"></Separator>
       <div className="mt-8">
-        <ul role="list" className="divide-y divide-background xl:col-span-3">
+        <ul role="list" className="divide-background divide-y xl:col-span-3">
           {people.map((person) => (
             <li
               key={person.name}
@@ -66,7 +66,7 @@ export default function About() {
               <img
                 alt=""
                 src={person.imageUrl}
-                className="aspect-[4/5] w-52 flex-none rounded-2xl object-cover"
+                className="aspect-4/5 w-52 flex-none rounded-2xl object-cover"
               />
               <div className="max-w-xl flex-auto">
                 <h3 className="text-lg/8 font-semibold tracking-tight">

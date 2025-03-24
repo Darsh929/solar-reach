@@ -27,8 +27,8 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[--background]">
-      <div className="mx-auto w-full max-w-7xl px-6 pb-10 pt-8 sm:pt-10 lg:px-8">
+    <footer className="bg-(--background)">
+      <div className="mx-auto w-full max-w-7xl px-6 pt-8 pb-10 sm:pt-10 lg:px-8">
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
