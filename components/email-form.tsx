@@ -66,7 +66,7 @@ export function EmailForm() {
                 <FormControl className="bg-white/5">
                   <Input
                     placeholder="Enter your email"
-                    className="w-full min-w-0 py-2 rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 sm:w-56 sm:text-sm/6"
+                    className="w-full min-w-0 rounded-md bg-white/5 px-3 py-1.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 sm:w-56 sm:text-sm/6"
                     {...field}
                   />
                 </FormControl>
