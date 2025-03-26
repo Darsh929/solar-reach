@@ -22,10 +22,15 @@ export default function About() {
       bio: "Vedant greatly enjoys using engineering to benefit the lives of others. At Solar Reach, he has exemplified this by helping develop the model from scratch and helping with operations to keep the organization running.",
       imageUrl: "/team/vedant.jpg",
     },
+    {
+      name: "Orlando Sirais",
+      bio: "I made this website! I love computer science and am super excited to be a part of Solar Reach working on the technical side of things.",
+      imageUrl: "/team/orlando.jpg",
+    },
   ];
 
   return (
-    <div className="mx-auto flex w-full max-w-(--breakpoint-lg) flex-col px-6 pb-24 sm:px-20">
+    <div className="mx-auto flex w-full max-w-(--breakpoint-lg) flex-col px-6 pb-20 sm:px-20 sm:pb-24">
       <h1 className="mt-32 text-xl font-bold uppercase sm:mt-64">
         Our Mission
       </h1>
@@ -72,7 +77,7 @@ export default function About() {
                 <h3 className="text-lg/8 font-semibold tracking-tight">
                   {person.name}
                 </h3>
-                <p className="mt-6 text-base/7">{person.bio}</p>
+                <p className="mt-2 text-base/7">{person.bio}</p>
               </div>
             </li>
           ))}

@@ -276,7 +276,7 @@ export default function Home() {
             Brightening futures with solar
           </h2>
           <p className="mx-auto max-w-(--breakpoint-md) text-center text-lg font-medium text-(--background) sm:text-xl">
-            At Solar Reach, we&apos;re committed to bringing sustainable,
+            At Solar Reach, we’re committed to bringing sustainable,
             solar-powered light to areas where energy resources are scarce.
           </p>
         </div>
