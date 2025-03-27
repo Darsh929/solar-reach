@@ -37,7 +37,7 @@ export default function Header() {
   }, []);
 
   return (
-    <div className="absolute -top-5 right-0 left-0 z-50 mx-auto ml-0 flex max-w-(--breakpoint-lg) flex-row items-center justify-between px-6 sm:top-0 sm:ml-auto">
+    <header className="absolute -top-5 right-0 left-0 z-50 mx-auto ml-0 flex max-w-(--breakpoint-lg) flex-row items-center justify-between px-6 sm:top-0 sm:ml-auto">
       <svg
         role="img"
         aria-label="Solar Reach Initiative logo"
@@ -124,13 +124,10 @@ export default function Header() {
                   Donate
                 </Link>
               </motion.li>
-              {/* <motion.li variants={itemVariants}>
-                <Link href="/volunteer" className="hover:underline decoration-2">Get Involved</Link>
-              </motion.li> */}
             </motion.ul>
           </motion.nav>
         </div>
       </div>
-    </div>
+    </header>
   );
 }

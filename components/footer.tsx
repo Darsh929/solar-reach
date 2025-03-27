@@ -1,4 +1,4 @@
-import { EmailForm } from "@/components/email-form";
+import EmailForm from "@/components/email-form";
 import Link from "next/link";
 import React from "react";
 
@@ -86,7 +86,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-4 border-y border-white/10 py-8 sm:flex sm:items-center sm:justify-between">
+        <div className="mt-4 gap-x-2 border-y border-white/10 py-8 sm:flex sm:items-center sm:justify-between">
           <div>
             <h3 className="text-sm/6 font-semibold text-white">
               Stay Connected

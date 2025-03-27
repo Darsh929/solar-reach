@@ -37,7 +37,7 @@ export default function Donate() {
               "_blank",
             )
           }
-          className="text-md w-full max-w-xs cursor-pointer rounded-none border-3 border-(--background) bg-(--yellow-5) py-5 font-bold text-(--background) uppercase shadow-[4px_4px_0_var(--background)] transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:bg-(--yellow-4) hover:shadow-[0px_0px_0_var(--background)] hover:filter sm:max-w-sm md:max-w-md lg:max-w-lg [&_svg]:size-auto"
+          className="text-md w-full max-w-xs cursor-pointer rounded-none border-3 border-(--background) bg-(--yellow-5) py-5 font-bold text-(--background) uppercase shadow-[4px_4px_0_var(--background)] transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:bg-(--yellow-4) hover:shadow-[0px_0px_0_var(--background)] sm:max-w-sm md:max-w-md lg:max-w-lg [&_svg]:size-auto"
           aria-label="Donate via PayPal"
         >
           Donate via
