@@ -10,7 +10,7 @@ export default function Donate() {
         Be a catalyst for change
       </h1>
 
-      <p className="mt-6 text-lg leading-7">
+      <p className="mt-6 text-lg/7">
         At Solar Reach, we’re on a mission to bring safe, sustainable light to
         communities living without reliable electricity.
         <br />

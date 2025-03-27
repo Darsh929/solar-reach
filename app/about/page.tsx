@@ -37,7 +37,7 @@ export default function About() {
       <h1 className="mt-2 scroll-m-20 text-4xl font-extrabold tracking-tight">
         Reaching out with solar
       </h1>
-      <p className="mt-6 text-lg leading-7">
+      <p className="mt-6 text-lg/7">
         At Solar Reach, we are a team of passionate high school students
         committed to making a positive impact on communities with limited access
         to electricity.
