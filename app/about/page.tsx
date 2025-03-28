@@ -24,7 +24,7 @@ export default function About() {
     },
     {
       name: "Orlando Sirais",
-      bio: "I made this website! I love computer science and am super excited to be a part of Solar Reach working on the technical side of things.",
+      bio: "I made this website! I love computer science and am super excited to be part of Solar Reach working on the technical side of things.",
       imageUrl: "/team/orlando.jpg",
     },
   ];
@@ -60,9 +60,9 @@ export default function About() {
         role in bringing light to the places that need it most.
       </p>
       <h1 className="mt-8 text-xl font-bold uppercase sm:mt-16">Our Team</h1>
-      <Separator className="stroke-background mt-2"></Separator>
+      <Separator className="bg-background mt-2"></Separator>
       <div className="mt-8">
-        <ul role="list" className="divide-background divide-y xl:col-span-3">
+        <ul className="divide-background divide-y xl:col-span-3">
           {people.map((person) => (
             <li
               key={person.name}
