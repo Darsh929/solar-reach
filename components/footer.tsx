@@ -67,9 +67,7 @@ export default function Footer() {
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 500 500"
-          width="50px"
-          height="50px"
-          className="-mb-6"
+          className="-mb-6 size-12"
         >
           <g transform="matrix(0.715699, 0, 0, 0.665239, -3.365015, 100.264091)">
             <g className="fill-(--yellow-5)">

@@ -50,11 +50,10 @@ export default function Home() {
       >
         <div className="mt-28 sm:hidden">
           <svg
-            height="325px"
-            width="325px"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
             overflow="visible"
+            className="size-81"
           >
             <ellipse
               className="fill-(--yellow-4)"
@@ -115,12 +114,11 @@ export default function Home() {
             <div className="relative flex h-full w-full items-center justify-center">
               <svg
                 ref={svgRef}
-                width="625px"
-                height="625px"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
                 fill="#000000"
                 overflow="visible"
+                className="size-156"
               >
                 <ellipse
                   style={{

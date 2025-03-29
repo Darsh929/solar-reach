@@ -3,13 +3,9 @@
 import React, { useEffect, useRef } from "react";
 
 export default function NavIcon({
-  width,
-  height,
   isHovered,
   className,
 }: {
-  width: number;
-  height: number;
   isHovered: boolean;
   className?: string;
 }) {
@@ -37,8 +33,6 @@ export default function NavIcon({
       className={className}
       ref={svgRef}
       xmlns="http://www.w3.org/2000/svg"
-      width={width}
-      height={height}
       viewBox="0 0 24 24"
       fill="none"
       stroke="#241f31"
