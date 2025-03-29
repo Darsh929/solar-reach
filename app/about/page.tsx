@@ -9,7 +9,7 @@ export default function About() {
     },
     {
       name: "Ethan Base",
-      bio: "Ethan is a passionate volunteer with a knack for programming. At Solar Reach, he plays a key role in spreading awareness of the cause through social media platforms and communication with our partners.",
+      bio: "Ethan is a passionate volunteer with a knack for programming. At Solar Reach, he plays a key role in fundraising through social media platforms and communication with our partners.",
       imageUrl: "/team/ethan.jpg",
     },
     {
