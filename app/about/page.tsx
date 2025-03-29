@@ -60,9 +60,9 @@ export default function About() {
         role in bringing light to the places that need it most.
       </p>
       <h1 className="mt-8 text-xl font-bold uppercase sm:mt-16">Our Team</h1>
-      <Separator className="bg-background mt-2"></Separator>
+      <Separator className="bg-foreground mt-2"></Separator>
       <div className="mt-8">
-        <ul className="divide-background divide-y xl:col-span-3">
+        <ul className="divide-foreground divide-y xl:col-span-3">
           {people.map((person) => (
             <li
               key={person.name}

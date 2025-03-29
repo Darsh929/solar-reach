@@ -24,7 +24,7 @@ export default function Header() {
         aria-label="Solar Reach Initiative logo"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 500 500"
-        className="size-38 fill-(--dark-4) sm:size-62"
+        className="fill-foreground size-38 sm:size-62"
       >
         <g transform="matrix(0.234866, 0, 0, 0.218307, -1.104274, 200.864273)">
           <path d="M 10.109 -27.416 C 29.029 -64.11 56.494 -96.651 86.855 -124.627 C 94.259 -131.449 109.294 -132.382 117.029 -125.939 C 171.509 -80.559 220.591 -28.66 266.716 25.191 C 273.534 33.151 275.695 45.925 272.882 56.021 C 269.127 69.5 247.037 112.666 220.144 101.937 C 151.292 74.468 82.805 44.517 19.686 5.644 C 9.917 -0.372 4.851 -17.219 10.109 -27.416 Z" />
@@ -59,7 +59,7 @@ export default function Header() {
         <div onMouseEnter={() => setIsHovered(true)}>
           <NavIcon className="size-10 sm:size-14" isHovered={isHovered} />
         </div>
-        <div className="absolute top-10 -right-9 w-40 text-right text-xl font-extrabold text-(--background) uppercase sm:top-12">
+        <div className="text-foreground absolute top-10 -right-9 w-40 text-right text-xl font-extrabold uppercase sm:top-12">
           <motion.nav initial={false} animate={isHovered ? "open" : "closed"}>
             <motion.ul
               variants={{

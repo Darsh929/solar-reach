@@ -62,10 +62,10 @@ export default function EmailForm() {
           name="email"
           render={({ field }) => (
             <FormItem className="flex-1">
-              <FormControl className="bg-white/5">
+              <FormControl>
                 <Input
                   placeholder="Enter your email"
-                  className="w-full min-w-0 rounded-md border-(--dark-3) bg-white/5 px-3 py-1.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus-visible:outline-solid sm:w-56 sm:text-sm/6"
+                  className="border-dark-3 placeholder:text-dark-1 w-full min-w-0 rounded-md bg-white/5 px-3 py-1.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 sm:w-56 sm:text-sm/6"
                   {...field}
                 />
               </FormControl>
@@ -76,7 +76,7 @@ export default function EmailForm() {
         <div className="mt-4 sm:mt-0 sm:shrink-0">
           <Button
             type="submit"
-            className="w-full items-center justify-center rounded-md bg-(--yellow-5) px-3 py-2 text-sm font-semibold text-(--background) shadow-xs hover:bg-(--yellow-4) focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--yellow-5)"
+            className="text-dark-4 bg-yellow-5 hover:bg-yellow-4 w-full items-center justify-center rounded-md px-3 py-2 text-sm font-semibold"
           >
             Subscribe
           </Button>
