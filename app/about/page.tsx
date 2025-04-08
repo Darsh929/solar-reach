@@ -1,4 +1,5 @@
 import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
 
 export default function About() {
   const people = [
@@ -68,11 +69,14 @@ export default function About() {
               key={person.name}
               className="flex flex-col gap-10 py-12 first:pt-0 last:pb-0 sm:flex-row"
             >
-              <img
-                alt=""
-                src={person.imageUrl}
-                className="aspect-4/5 w-52 flex-none rounded-2xl object-cover"
-              />
+              <div className="relative aspect-4/5 w-52 flex-none">
+                <Image
+                  alt={`${person.name}’s photo`}
+                  src={person.imageUrl}
+                  className="rounded-2xl object-cover"
+                  fill
+                />
+              </div>
               <div className="max-w-xl flex-auto">
                 <h3 className="text-lg/8 font-semibold tracking-tight">
                   {person.name}
