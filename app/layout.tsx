@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Solar Reach",
@@ -20,6 +21,15 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <Toaster
+          toastOptions={{
+            classNames: {
+              toast: "!bg-[#2F2A3B] !text-light-3 !border-dark-3",
+              title: "!text-white",
+              description: "!text-light-3",
+            },
+          }}
+        />
       </body>
     </html>
   );

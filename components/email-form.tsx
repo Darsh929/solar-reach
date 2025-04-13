@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
 
 const zString = z.string().trim().min(1).max(10000);
@@ -27,7 +28,9 @@ const fieldIds = {
 export default function EmailForm() {
   const form = useForm<z.infer<typeof emailSchema>>({
     resolver: zodResolver(emailSchema),
-    defaultValues: {},
+    defaultValues: {
+      email: "",
+    },
   });
 
   function onSubmit(values: z.infer<typeof emailSchema>) {
@@ -46,9 +49,11 @@ export default function EmailForm() {
       }
     });
 
-    axios.post(`${baseUrl}${params.toString()}`);
+    axios.post(`${baseUrl}${params.toString()}`).catch(() => {});
+    toast.success("Successfully subscribed to the newsletter!", {
+      description: "Thank you for joining our mailing list.",
+    });
     form.reset();
-    window.location.href = window.location.pathname + "?success=1";
   }
 
   return (
