@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import "./globals.css";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { Toaster } from "@/components/ui/sonner";
+import { team } from "@/lib/team";
 
 export const metadata: Metadata = {
   title: "Solar Reach",
@@ -18,6 +20,21 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-dark-4">
       <body className="bg-background text-foreground">
+        <div
+          className="pointer-events-none fixed top-0 left-0 -z-10 opacity-0"
+          aria-hidden
+        >
+          {team.map((person) => (
+            <Image
+              key={person.name}
+              src={person.imageUrl}
+              alt=""
+              width={400}
+              height={500}
+              priority
+            />
+          ))}
+        </div>
         <Header />
         {children}
         <Footer />

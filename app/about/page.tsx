@@ -1,35 +1,8 @@
 import { Separator } from "@/components/ui/separator";
+import { team } from "@/lib/team";
 import Image from "next/image";
 
 export default function About() {
-  const people = [
-    {
-      name: "Aryan Surana",
-      bio: "Aryan has a keen interest in just about anything scientific and volunteers at a nursing home every weekend. At Solar Reach, he is responsible for managing the team while also maintaining the solar lantern‘s design and development with Vedant.",
-      imageUrl: "/team/aryan.jpg",
-    },
-    {
-      name: "Ethan Base",
-      bio: "Ethan is a passionate volunteer with a knack for programming. At Solar Reach, he plays a key role in fundraising through social media platforms and communication with our partners.",
-      imageUrl: "/team/ethan.jpg",
-    },
-    {
-      name: "Manashyu Kumar",
-      bio: "Manashyu is a massive technology enthusiast who hopes to unite all communities under the shared realm of engineering. He has aided Solar Reach through public outreach and locating events in order to raise funds.",
-      imageUrl: "/team/manashyu.jpg",
-    },
-    {
-      name: "Vedant Aggarwal",
-      bio: "Vedant greatly enjoys using engineering to benefit the lives of others. At Solar Reach, he has exemplified this by helping develop the model from scratch and helping with operations to keep the organization running.",
-      imageUrl: "/team/vedant.jpg",
-    },
-    {
-      name: "Orlando Sirais",
-      bio: "I made this website! I love computer science and am super excited to be part of Solar Reach working on the technical side of things.",
-      imageUrl: "/team/orlando.jpg",
-    },
-  ];
-
   return (
     <div className="mx-auto flex w-full max-w-(--breakpoint-lg) flex-col px-6 pb-20 sm:px-20 sm:pb-24">
       <h1 className="mt-32 text-xl font-bold uppercase sm:mt-64">
@@ -64,7 +37,7 @@ export default function About() {
       <Separator className="bg-foreground mt-2"></Separator>
       <div className="mt-8">
         <ul className="divide-foreground divide-y xl:col-span-3">
-          {people.map((person) => (
+          {team.map((person) => (
             <li
               key={person.name}
               className="flex flex-col gap-10 py-12 first:pt-0 last:pb-0 sm:flex-row"
@@ -74,6 +47,8 @@ export default function About() {
                   alt={`${person.name}’s photo`}
                   src={person.imageUrl}
                   className="rounded-2xl object-cover"
+                  priority
+                  sizes="13rem"
                   fill
                 />
               </div>
