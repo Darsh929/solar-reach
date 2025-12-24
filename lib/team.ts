@@ -11,7 +11,7 @@ export const team = [
   },
   {
     name: "Manashyu Kumar",
-    bio: "Manashyu is a massive technology enthusiast who hopes to unite all communities under the shared realm of engineering. He has aided Solar Reach through public outreach and locating events in order to raise funds.",
+    bio: "I helped develop this website and support Solar Reach through outreach and event planning. I am really interested in technology and engineering and enjoy using those skills to make an impact.",
     imageUrl: "/team/manashyu.jpg",
   },
   {
@@ -21,7 +21,7 @@ export const team = [
   },
   {
     name: "Orlando Sirais",
-    bio: "I made this website! I love computer science and am super excited to be part of Solar Reach working on the technical side of things.",
+    bio: "I helped make this website! I love computer science and am super excited to be part of Solar Reach working on the technical side of things.",
     imageUrl: "/team/orlando.jpg",
   },
 ];
