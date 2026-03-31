@@ -1,6 +1,5 @@
 import { Separator } from "@/components/ui/separator";
 import { team } from "@/lib/team";
-import Image from "next/image";
 
 export default function About() {
   return (
@@ -33,25 +32,17 @@ export default function About() {
         Driven by a shared vision of a brighter future, we are proud to play a
         role in bringing light to the places that need it most.
       </p>
+
       <h1 className="mt-8 text-xl font-bold uppercase sm:mt-16">Our Team</h1>
       <Separator className="bg-foreground mt-2"></Separator>
+
       <div className="mt-8">
         <ul className="divide-foreground divide-y xl:col-span-3">
           {team.map((person) => (
             <li
               key={person.name}
-              className="flex flex-col gap-10 py-12 first:pt-0 last:pb-0 sm:flex-row"
+              className="flex flex-col gap-10 py-12 first:pt-0 last:pb-0"
             >
-              <div className="relative aspect-4/5 w-52 flex-none">
-                <Image
-                  alt={`${person.name}’s photo`}
-                  src={person.imageUrl}
-                  className="rounded-2xl object-cover"
-                  priority
-                  sizes="13rem"
-                  fill
-                />
-              </div>
               <div className="max-w-xl flex-auto">
                 <h3 className="text-lg/8 font-semibold tracking-tight">
                   {person.name}
