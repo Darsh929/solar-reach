@@ -16,7 +16,7 @@ export default function About() {
         to electricity.
         <br />
         <br />
-        As a 501(c)(3 nonprofit organization, our mission is to develop and
+        As a 501(c)(3) nonprofit organization, our mission is to develop and
         distribute solar-powered lights to communities with limited electricity
         access. We believe that everyone deserves the chance to thrive, study,
         and live safely—regardless of their access to the electrical grid.
