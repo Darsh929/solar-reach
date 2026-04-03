@@ -4,14 +4,14 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const [isLightOn, setIsLightOn] = useState(false);
-  const [backgroundColor, setBackgroundColor] = useState("#1F2025"); // darker start
+  const [backgroundColor, setBackgroundColor] = useState("#1F2025"); // dark start
 
   const svgRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       animate();
-    }, 1500); // Auto-turn on after 1.5s
+    }, 1500); // auto-turn on after 1.5s
     return () => clearTimeout(timer);
   }, []);
 
@@ -19,20 +19,15 @@ export default function Home() {
     if (isLightOn) return;
     setIsLightOn(true);
 
-    const animatesBulb = svgRef.current?.querySelectorAll(
-      `animate[data-group="bulb"]`
-    );
-    const animatesHalo = svgRef.current?.querySelectorAll(
-      `animate[data-group="halo"]`
-    );
+    const animatesBulb = svgRef.current?.querySelectorAll(`animate[data-group="bulb"]`);
+    const animatesHalo = svgRef.current?.querySelectorAll(`animate[data-group="halo"]`);
 
     animatesBulb?.forEach((animate) => (animate as SVGAnimateElement).beginElement());
-
     animatesHalo?.forEach((animate, index) => {
       setTimeout(() => (animate as SVGAnimateElement).beginElement(), index * 200);
     });
 
-    // Gradual background transition
+    // gradual background transition
     setTimeout(() => setBackgroundColor("#2E3240"), 300);
     setTimeout(() => setBackgroundColor("#3B4355"), 700);
     setTimeout(() => setBackgroundColor("#47516B"), 1200);
@@ -49,10 +44,10 @@ export default function Home() {
         <svg
           ref={svgRef}
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 512 700" // Increased height so halos aren’t clipped
-          className="w-[400px] h-[550px]"
+          viewBox="0 0 700 700" // wider to avoid horizontal clipping
+          className="w-[550px] h-[550px]"
         >
-          {/* HALO: multiple distinct yellow circles */}
+          {/* HALO: distinct yellow circles */}
           {[
             { r: 180, fill: "#FFEB3B", opacity: 0.3 },
             { r: 230, fill: "#FFC107", opacity: 0.25 },
@@ -60,8 +55,8 @@ export default function Home() {
           ].map((halo, i) => (
             <circle
               key={i}
-              cx="256"
-              cy="350" // shifted down so bulb base is at the top
+              cx="350" // centered horizontally
+              cy="350" // center vertically for bulb
               r={halo.r}
               fill={halo.fill}
               opacity={0}
@@ -78,7 +73,7 @@ export default function Home() {
           ))}
 
           {/* BULB SHAPE (upside down) */}
-          <ellipse cx="256" cy="350" rx="100" ry="120" fill="#FFD700">
+          <ellipse cx="350" cy="360" rx="100" ry="120" fill="#FFD700">
             <animate
               data-group="bulb"
               attributeName="fill"
@@ -89,8 +84,8 @@ export default function Home() {
             />
           </ellipse>
 
-          {/* BULB NECK (top of bulb now, to attach string) */}
-          <rect x="230" y="230" width="52" height="60" rx="6" fill="#777">
+          {/* BULB NECK (above the bulb) */}
+          <rect x="330" y="240" width="40" height="60" rx="6" fill="#777">
             <animate
               data-group="bulb"
               attributeName="fill"
@@ -101,8 +96,8 @@ export default function Home() {
             />
           </rect>
 
-          {/* WIRE/string attached to the base of bulb */}
-          <line x1="256" y1="230" x2="256" y2="0" stroke="#888" strokeWidth="8">
+          {/* WIRE/string attached to the top of neck */}
+          <line x1="350" y1="240" x2="350" y2="0" stroke="#888" strokeWidth="8">
             <animate
               data-group="bulb"
               attributeName="stroke"
@@ -117,12 +112,9 @@ export default function Home() {
 
       {/* TEXT */}
       <div className="text-center">
-        <h2 className="text-3xl font-extrabold">
-          Brightening futures with solar
-        </h2>
+        <h2 className="text-3xl font-extrabold">Brightening futures with solar</h2>
         <p className="mt-4 text-lg">
-          At Solar Reach, we’re committed to bringing sustainable,
-          solar-powered light to areas where energy resources are scarce.
+          At Solar Reach, we’re committed to bringing sustainable, solar-powered light to areas where energy resources are scarce.
         </p>
       </div>
     </div>
