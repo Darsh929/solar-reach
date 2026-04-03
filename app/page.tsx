@@ -9,10 +9,12 @@ export default function Home() {
   const svgRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
-    const isMobile = window.matchMedia("(max-width: 640px)").matches;
-    if (isMobile || window.location.href.includes("#")) {
-      setBackgroundColor("#4D5669");
-    }
+    // AUTO TURN ON after 1.5s
+    const timer = setTimeout(() => {
+      animate();
+    }, 1500);
+
+    return () => clearTimeout(timer);
   }, []);
 
   function animate() {
@@ -33,8 +35,14 @@ export default function Home() {
     animatesHalo?.forEach((animate, index) => {
       setTimeout(() => {
         (animate as SVGAnimateElement).beginElement();
-      }, (animatesHalo.length - index) * 400);
+      }, index * 300);
     });
+
+    // 🌟 GRADUAL BACKGROUND BRIGHTENING
+    setTimeout(() => setBackgroundColor("#5E6A80"), 300);
+    setTimeout(() => setBackgroundColor("#76839A"), 700);
+    setTimeout(() => setBackgroundColor("#A3AED0"), 1200);
+    setTimeout(() => setBackgroundColor("#E6EAF7"), 1800);
   }
 
   return (
@@ -44,10 +52,6 @@ export default function Home() {
       style={{ backgroundColor, color: "#000000" }}
     >
       <div className="hidden sm:block">
-        {!isLightOn && (
-          <div className="absolute inset-0 z-50 cursor-pointer"></div>
-        )}
-
         <div className="flex items-center justify-center">
           <svg
             ref={svgRef}
@@ -58,15 +62,15 @@ export default function Home() {
             {/* BLUR FILTER */}
             <defs>
               <filter id="glow">
-                <feGaussianBlur stdDeviation="25" result="coloredBlur" />
+                <feGaussianBlur stdDeviation="30" />
               </filter>
             </defs>
 
-            {/* SOFT GLOW (blurred halos) */}
+            {/* GLOW */}
             <circle
               cx="256"
               cy="200"
-              r="120"
+              r="140"
               fill="#f5c211"
               opacity="0"
               filter="url(#glow)"
@@ -74,7 +78,7 @@ export default function Home() {
               <animate
                 data-group="halo"
                 attributeName="opacity"
-                values="0;0.6"
+                values="0;0.7"
                 begin="indefinite"
                 dur="0.6s"
                 fill="freeze"
@@ -84,7 +88,7 @@ export default function Home() {
             <circle
               cx="256"
               cy="200"
-              r="180"
+              r="220"
               fill="#f5c211"
               opacity="0"
               filter="url(#glow)"
@@ -92,7 +96,7 @@ export default function Home() {
               <animate
                 data-group="halo"
                 attributeName="opacity"
-                values="0;0.3"
+                values="0;0.4"
                 begin="indefinite"
                 dur="0.8s"
                 fill="freeze"
