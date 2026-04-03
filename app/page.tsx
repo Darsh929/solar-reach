@@ -54,18 +54,15 @@ export default function Home() {
           ref={svgRef}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
-          className="w-[300px] h-[300px]"
+          className="w-[400px] h-[400px]"
         >
-          {/* HALO: concentric circles */}
-          {[1, 2, 3].map((i) => (
-            <circle
-              key={i}
-              cx="256"
-              cy="256"
-              r={50 + i * 40}
-              fill={["#FFD700", "#FFC107", "#FFEB3B"][i - 1]}
-              opacity="0"
-            >
+          {/* HALO: concentric circles with different yellow shades */}
+          {[
+            { r: 150, fill: "#FFEB3B" }, // lightest
+            { r: 200, fill: "#FFC107" }, // medium
+            { r: 250, fill: "#FFD700" }, // strongest
+          ].map((halo, i) => (
+            <circle key={i} cx="256" cy="256" r={halo.r} fill={halo.fill} opacity="0">
               <animate
                 data-group="halo"
                 attributeName="opacity"
@@ -77,8 +74,8 @@ export default function Home() {
             </circle>
           ))}
 
-          {/* BULB */}
-          <circle cx="256" cy="256" r="50" fill="#333">
+          {/* BULB (twice as large) */}
+          <circle cx="256" cy="256" r="100" fill="#333">
             <animate
               data-group="bulb"
               attributeName="fill"
@@ -90,7 +87,7 @@ export default function Home() {
           </circle>
 
           {/* BULB BASE */}
-          <rect x="230" y="310" width="50" height="40" fill="#777">
+          <rect x="206" y="410" width="100" height="50" fill="#777">
             <animate
               data-group="bulb"
               attributeName="fill"
@@ -106,9 +103,9 @@ export default function Home() {
             x1="256"
             y1="0"
             x2="256"
-            y2="206"
+            y2="356"
             stroke="#888"
-            strokeWidth="6"
+            strokeWidth="8"
           >
             <animate
               data-group="bulb"
