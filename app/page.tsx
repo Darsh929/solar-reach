@@ -4,14 +4,14 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const [isLightOn, setIsLightOn] = useState(false);
-  const [backgroundColor, setBackgroundColor] = useState("#89b5f0");
+  const [backgroundColor, setBackgroundColor] = useState("#4D5669");
 
   const svgRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
     const isMobile = window.matchMedia("(max-width: 640px)").matches;
     if (isMobile || window.location.href.includes("#")) {
-      setBackgroundColor("#89b5f0");
+      setBackgroundColor("#4D5669");
     }
   }, []);
 
@@ -35,8 +35,8 @@ export default function Home() {
       }, (animatesHalo.length - index) * 500);
     });
 
-    // Change background color to #89b5f0 after animation
-    setTimeout(() => setBackgroundColor("#89b5f0"), 1750);
+    // Keep background #4D5669 after animation
+    setTimeout(() => setBackgroundColor("#4D5669"), 1750);
   }
 
   return (
