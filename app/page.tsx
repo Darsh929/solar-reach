@@ -49,8 +49,8 @@ export default function Home() {
         <svg
           ref={svgRef}
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 512 512"
-          className="w-[400px] h-[400px]"
+          viewBox="0 0 512 700" // Increased height so halos aren’t clipped
+          className="w-[400px] h-[550px]"
         >
           {/* HALO: multiple distinct yellow circles */}
           {[
@@ -61,7 +61,7 @@ export default function Home() {
             <circle
               key={i}
               cx="256"
-              cy="256"
+              cy="350" // shifted down so bulb base is at the top
               r={halo.r}
               fill={halo.fill}
               opacity={0}
@@ -77,8 +77,8 @@ export default function Home() {
             </circle>
           ))}
 
-          {/* BULB SHAPE */}
-          <ellipse cx="256" cy="256" rx="100" ry="120" fill="#FFD700">
+          {/* BULB SHAPE (upside down) */}
+          <ellipse cx="256" cy="350" rx="100" ry="120" fill="#FFD700">
             <animate
               data-group="bulb"
               attributeName="fill"
@@ -89,8 +89,8 @@ export default function Home() {
             />
           </ellipse>
 
-          {/* BULB NECK */}
-          <rect x="230" y="370" width="52" height="60" rx="6" fill="#777">
+          {/* BULB NECK (top of bulb now, to attach string) */}
+          <rect x="230" y="230" width="52" height="60" rx="6" fill="#777">
             <animate
               data-group="bulb"
               attributeName="fill"
@@ -101,8 +101,8 @@ export default function Home() {
             />
           </rect>
 
-          {/* WIRE */}
-          <line x1="256" y1="0" x2="256" y2="250" stroke="#888" strokeWidth="8">
+          {/* WIRE/string attached to the base of bulb */}
+          <line x1="256" y1="230" x2="256" y2="0" stroke="#888" strokeWidth="8">
             <animate
               data-group="bulb"
               attributeName="stroke"
