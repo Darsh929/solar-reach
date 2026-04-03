@@ -33,7 +33,7 @@ export default function Home() {
     animatesHalo?.forEach((animate, index) => {
       setTimeout(() => {
         (animate as SVGAnimateElement).beginElement();
-      }, (animatesHalo.length - index) * 500);
+      }, (animatesHalo.length - index) * 400);
     });
   }
 
@@ -55,28 +55,49 @@ export default function Home() {
             viewBox="0 0 512 512"
             className="size-156"
           >
-            {/* HALO */}
-            <ellipse cx="256" cy="256" rx="256" ry="256" opacity="0">
-              <animate
-                data-group="halo"
-                attributeName="opacity"
-                values="0;1"
-                begin="indefinite"
-                dur="0.5s"
-                fill="freeze"
-              />
-            </ellipse>
+            {/* BLUR FILTER */}
+            <defs>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="25" result="coloredBlur" />
+              </filter>
+            </defs>
 
-            <ellipse cx="256" cy="256" rx="180" ry="180" opacity="0">
+            {/* SOFT GLOW (blurred halos) */}
+            <circle
+              cx="256"
+              cy="200"
+              r="120"
+              fill="#f5c211"
+              opacity="0"
+              filter="url(#glow)"
+            >
               <animate
                 data-group="halo"
                 attributeName="opacity"
-                values="0;1"
+                values="0;0.6"
                 begin="indefinite"
-                dur="0.5s"
+                dur="0.6s"
                 fill="freeze"
               />
-            </ellipse>
+            </circle>
+
+            <circle
+              cx="256"
+              cy="200"
+              r="180"
+              fill="#f5c211"
+              opacity="0"
+              filter="url(#glow)"
+            >
+              <animate
+                data-group="halo"
+                attributeName="opacity"
+                values="0;0.3"
+                begin="indefinite"
+                dur="0.8s"
+                fill="freeze"
+              />
+            </circle>
 
             {/* BULB */}
             <circle cx="256" cy="200" r="80" fill="#333">
