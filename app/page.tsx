@@ -9,11 +9,9 @@ export default function Home() {
   const svgRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
-    // AUTO TURN ON after 1.5s
     const timer = setTimeout(() => {
       animate();
-    }, 1500);
-
+    }, 1500); // Auto-turn on after 1.5s
     return () => clearTimeout(timer);
   }, []);
 
@@ -35,14 +33,14 @@ export default function Home() {
     animatesHalo?.forEach((animate, index) => {
       setTimeout(() => {
         (animate as SVGAnimateElement).beginElement();
-      }, index * 200); // stagger for solid blocks
+      }, index * 200);
     });
 
-    // Background transition to final color
+    // Gradual background transition
     setTimeout(() => setBackgroundColor("#2E3240"), 300);
     setTimeout(() => setBackgroundColor("#3B4355"), 700);
     setTimeout(() => setBackgroundColor("#47516B"), 1200);
-    setTimeout(() => setBackgroundColor("#4D5669"), 1800); // FINAL COLOR
+    setTimeout(() => setBackgroundColor("#4D5669"), 1800);
   }
 
   return (
@@ -51,80 +49,77 @@ export default function Home() {
       onClick={animate}
       style={{ backgroundColor, color: "#000000" }}
     >
-      <div className="hidden sm:block">
-        <div className="flex items-center justify-center">
-          <svg
-            ref={svgRef}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            className="size-156"
-          >
-            {/* BULB */}
-            <rect x="176" y="120" width="160" height="160" fill="#333">
-              <animate
-                data-group="bulb"
-                attributeName="fill"
-                values="#333;#f5c211"
-                begin="indefinite"
-                dur="0.4s"
-                fill="freeze"
-              />
-            </rect>
-
-            {/* HALO / LIGHT SQUARES */}
-            {[0, 1, 2].map((i) => (
-              <rect
-                key={i}
-                x={120 - i * 20}
-                y={60 - i * 20}
-                width={272 + i * 40}
-                height={272 + i * 40}
-                fill="#f5c211"
-                opacity="0"
-              >
-                <animate
-                  data-group="halo"
-                  attributeName="opacity"
-                  values="0;1"
-                  begin="indefinite"
-                  dur="0.3s"
-                  fill="freeze"
-                />
-              </rect>
-            ))}
-
-            {/* BASE */}
-            <rect x="220" y="280" width="70" height="60" fill="#777">
-              <animate
-                data-group="bulb"
-                attributeName="fill"
-                values="#777;#ccc"
-                begin="indefinite"
-                dur="0.4s"
-                fill="freeze"
-              />
-            </rect>
-
-            {/* WIRE */}
-            <line
-              x1="256"
-              y1="0"
-              x2="256"
-              y2="120"
-              stroke="#888"
-              strokeWidth="6"
+      <div className="flex items-center justify-center">
+        <svg
+          ref={svgRef}
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+          className="w-[300px] h-[300px]"
+        >
+          {/* HALO: concentric circles */}
+          {[1, 2, 3].map((i) => (
+            <circle
+              key={i}
+              cx="256"
+              cy="256"
+              r={50 + i * 40}
+              fill={["#FFD700", "#FFC107", "#FFEB3B"][i - 1]}
+              opacity="0"
             >
               <animate
-                data-group="bulb"
-                attributeName="stroke"
-                values="#888;#ddd"
+                data-group="halo"
+                attributeName="opacity"
+                values="0;1"
                 begin="indefinite"
-                dur="0.4s"
+                dur="0.3s"
                 fill="freeze"
               />
-            </line>
-          </svg>
-        </div>
+            </circle>
+          ))}
+
+          {/* BULB */}
+          <circle cx="256" cy="256" r="50" fill="#333">
+            <animate
+              data-group="bulb"
+              attributeName="fill"
+              values="#333;#FFD700"
+              begin="indefinite"
+              dur="0.4s"
+              fill="freeze"
+            />
+          </circle>
+
+          {/* BULB BASE */}
+          <rect x="230" y="310" width="50" height="40" fill="#777">
+            <animate
+              data-group="bulb"
+              attributeName="fill"
+              values="#777;#CCC"
+              begin="indefinite"
+              dur="0.4s"
+              fill="freeze"
+            />
+          </rect>
+
+          {/* WIRE */}
+          <line
+            x1="256"
+            y1="0"
+            x2="256"
+            y2="206"
+            stroke="#888"
+            strokeWidth="6"
+          >
+            <animate
+              data-group="bulb"
+              attributeName="stroke"
+              values="#888;#DDD"
+              begin="indefinite"
+              dur="0.4s"
+              fill="freeze"
+            />
+          </line>
+        </svg>
       </div>
 
       {/* TEXT */}
