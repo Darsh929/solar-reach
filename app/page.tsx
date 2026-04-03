@@ -4,14 +4,14 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const [isLightOn, setIsLightOn] = useState(false);
-  const [backgroundColor, setBackgroundColor] = useState("var(--foreground)");
+  const [backgroundColor, setBackgroundColor] = useState("#89b5f0");
 
   const svgRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
     const isMobile = window.matchMedia("(max-width: 640px)").matches;
     if (isMobile || window.location.href.includes("#")) {
-      setBackgroundColor("var(--background)");
+      setBackgroundColor("#89b5f0");
     }
   }, []);
 
@@ -19,10 +19,10 @@ export default function Home() {
     if (isLightOn) return;
     setIsLightOn(true);
     const animatesBulb = svgRef.current?.querySelectorAll(
-      `animate[data-group="bulb"]`,
+      `animate[data-group="bulb"]`
     );
     const animatesHalo = svgRef.current?.querySelectorAll(
-      `animate[data-group="halo"]`,
+      `animate[data-group="halo"]`
     );
 
     animatesBulb?.forEach((animate) => {
@@ -30,15 +30,13 @@ export default function Home() {
     });
 
     animatesHalo?.forEach((animate, index) => {
-      setTimeout(
-        () => {
-          (animate as SVGAnimateElement).beginElement();
-        },
-        (animatesHalo.length - index) * 500,
-      );
+      setTimeout(() => {
+        (animate as SVGAnimateElement).beginElement();
+      }, (animatesHalo.length - index) * 500);
     });
 
-    setTimeout(() => setBackgroundColor("var(--background)"), 1750);
+    // Change background color to #89b5f0 after animation
+    setTimeout(() => setBackgroundColor("#89b5f0"), 1750);
   }
 
   return (
@@ -247,6 +245,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+
         <div className="mt-6 flex flex-col items-center gap-8 text-center sm:-mt-[70px]">
           <h2 className="max-w-(--breakpoint-md) text-2xl font-extrabold sm:text-3xl">
             Brightening futures with solar
