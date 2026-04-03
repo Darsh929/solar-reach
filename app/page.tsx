@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const [isLightOn, setIsLightOn] = useState(false);
-  const [backgroundColor, setBackgroundColor] = useState("#1F2025"); // DARK START
+  const [backgroundColor, setBackgroundColor] = useState("#1F2025"); // darker start
 
   const svgRef = useRef<SVGSVGElement>(null);
 
@@ -26,14 +26,10 @@ export default function Home() {
       `animate[data-group="halo"]`
     );
 
-    animatesBulb?.forEach((animate) => {
-      (animate as SVGAnimateElement).beginElement();
-    });
+    animatesBulb?.forEach((animate) => (animate as SVGAnimateElement).beginElement());
 
     animatesHalo?.forEach((animate, index) => {
-      setTimeout(() => {
-        (animate as SVGAnimateElement).beginElement();
-      }, index * 200);
+      setTimeout(() => (animate as SVGAnimateElement).beginElement(), index * 200);
     });
 
     // Gradual background transition
@@ -49,33 +45,40 @@ export default function Home() {
       onClick={animate}
       style={{ backgroundColor, color: "#000000" }}
     >
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center relative">
         <svg
           ref={svgRef}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
           className="w-[400px] h-[400px]"
         >
-          {/* HALO: concentric circles with different yellow shades */}
+          {/* HALO: multiple distinct yellow circles */}
           {[
-            { r: 150, fill: "#FFEB3B" }, // lightest
-            { r: 200, fill: "#FFC107" }, // medium
-            { r: 250, fill: "#FFD700" }, // strongest
+            { r: 180, fill: "#FFEB3B", opacity: 0.3 },
+            { r: 230, fill: "#FFC107", opacity: 0.25 },
+            { r: 280, fill: "#FFD700", opacity: 0.2 },
           ].map((halo, i) => (
-            <circle key={i} cx="256" cy="256" r={halo.r} fill={halo.fill} opacity="0">
+            <circle
+              key={i}
+              cx="256"
+              cy="256"
+              r={halo.r}
+              fill={halo.fill}
+              opacity={0}
+            >
               <animate
                 data-group="halo"
                 attributeName="opacity"
-                values="0;1"
+                values={`0;${halo.opacity}`}
                 begin="indefinite"
-                dur="0.3s"
+                dur="0.5s"
                 fill="freeze"
               />
             </circle>
           ))}
 
-          {/* BULB (twice as large) */}
-          <circle cx="256" cy="256" r="100" fill="#333">
+          {/* BULB SHAPE */}
+          <ellipse cx="256" cy="256" rx="100" ry="120" fill="#FFD700">
             <animate
               data-group="bulb"
               attributeName="fill"
@@ -84,10 +87,10 @@ export default function Home() {
               dur="0.4s"
               fill="freeze"
             />
-          </circle>
+          </ellipse>
 
-          {/* BULB BASE */}
-          <rect x="206" y="410" width="100" height="50" fill="#777">
+          {/* BULB NECK */}
+          <rect x="230" y="370" width="52" height="60" rx="6" fill="#777">
             <animate
               data-group="bulb"
               attributeName="fill"
@@ -99,14 +102,7 @@ export default function Home() {
           </rect>
 
           {/* WIRE */}
-          <line
-            x1="256"
-            y1="0"
-            x2="256"
-            y2="356"
-            stroke="#888"
-            strokeWidth="8"
-          >
+          <line x1="256" y1="0" x2="256" y2="250" stroke="#888" strokeWidth="8">
             <animate
               data-group="bulb"
               attributeName="stroke"
