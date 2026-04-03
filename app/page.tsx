@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const [isLightOn, setIsLightOn] = useState(false);
-  const [backgroundColor, setBackgroundColor] = useState("#4D5669");
+  const [backgroundColor, setBackgroundColor] = useState("#1F2025"); // DARK START
 
   const svgRef = useRef<SVGSVGElement>(null);
 
@@ -35,14 +35,14 @@ export default function Home() {
     animatesHalo?.forEach((animate, index) => {
       setTimeout(() => {
         (animate as SVGAnimateElement).beginElement();
-      }, index * 300);
+      }, index * 200); // stagger for smooth spread
     });
 
-    // 🌟 GRADUAL BACKGROUND BRIGHTENING
-    setTimeout(() => setBackgroundColor("#5E6A80"), 300);
-    setTimeout(() => setBackgroundColor("#76839A"), 700);
-    setTimeout(() => setBackgroundColor("#A3AED0"), 1200);
-    setTimeout(() => setBackgroundColor("#E6EAF7"), 1800);
+    // 🌟 GRADUAL GLOW AND LIGHT EFFECT
+    setTimeout(() => setBackgroundColor("#2E3240"), 300);
+    setTimeout(() => setBackgroundColor("#3B4355"), 700);
+    setTimeout(() => setBackgroundColor("#47516B"), 1200);
+    setTimeout(() => setBackgroundColor("#4D5669"), 1800); // FINAL COLOR
   }
 
   return (
@@ -62,46 +62,32 @@ export default function Home() {
             {/* BLUR FILTER */}
             <defs>
               <filter id="glow">
-                <feGaussianBlur stdDeviation="30" />
+                <feGaussianBlur stdDeviation="40" />
               </filter>
             </defs>
 
-            {/* GLOW */}
-            <circle
-              cx="256"
-              cy="200"
-              r="140"
-              fill="#f5c211"
-              opacity="0"
-              filter="url(#glow)"
-            >
-              <animate
-                data-group="halo"
-                attributeName="opacity"
-                values="0;0.7"
-                begin="indefinite"
-                dur="0.6s"
-                fill="freeze"
-              />
-            </circle>
-
-            <circle
-              cx="256"
-              cy="200"
-              r="220"
-              fill="#f5c211"
-              opacity="0"
-              filter="url(#glow)"
-            >
-              <animate
-                data-group="halo"
-                attributeName="opacity"
-                values="0;0.4"
-                begin="indefinite"
-                dur="0.8s"
-                fill="freeze"
-              />
-            </circle>
+            {/* MULTI-LAYER GLOW */}
+            {[1, 2, 3].map((i) => (
+              <circle
+                key={i}
+                cx="256"
+                cy="200"
+                r={140 + i * 60} // bigger radius for outer layers
+                fill="#f5c211"
+                opacity="0"
+                filter="url(#glow)"
+              >
+                <animate
+                  data-group="halo"
+                  attributeName="opacity"
+                  values="0;0.2;0.5;0.7"
+                  keyTimes="0;0.3;0.7;1"
+                  begin="indefinite"
+                  dur={`${0.8 + i * 0.2}s`}
+                  fill="freeze"
+                />
+              </circle>
+            ))}
 
             {/* BULB */}
             <circle cx="256" cy="200" r="80" fill="#333">
@@ -110,7 +96,7 @@ export default function Home() {
                 attributeName="fill"
                 values="#333;#f5c211"
                 begin="indefinite"
-                dur="0.3s"
+                dur="0.4s"
                 fill="freeze"
               />
             </circle>
@@ -122,7 +108,7 @@ export default function Home() {
                 attributeName="fill"
                 values="#777;#ccc"
                 begin="indefinite"
-                dur="0.3s"
+                dur="0.4s"
                 fill="freeze"
               />
             </rect>
@@ -141,7 +127,7 @@ export default function Home() {
                 attributeName="stroke"
                 values="#888;#ddd"
                 begin="indefinite"
-                dur="0.3s"
+                dur="0.4s"
                 fill="freeze"
               />
             </line>
