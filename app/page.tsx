@@ -35,10 +35,10 @@ export default function Home() {
     animatesHalo?.forEach((animate, index) => {
       setTimeout(() => {
         (animate as SVGAnimateElement).beginElement();
-      }, index * 200); // stagger for smooth spread
+      }, index * 200); // stagger for solid blocks
     });
 
-    // 🌟 GRADUAL GLOW AND LIGHT EFFECT
+    // Background transition to final color
     setTimeout(() => setBackgroundColor("#2E3240"), 300);
     setTimeout(() => setBackgroundColor("#3B4355"), 700);
     setTimeout(() => setBackgroundColor("#47516B"), 1200);
@@ -59,38 +59,8 @@ export default function Home() {
             viewBox="0 0 512 512"
             className="size-156"
           >
-            {/* BLUR FILTER */}
-            <defs>
-              <filter id="glow">
-                <feGaussianBlur stdDeviation="40" />
-              </filter>
-            </defs>
-
-            {/* MULTI-LAYER GLOW */}
-            {[1, 2, 3].map((i) => (
-              <circle
-                key={i}
-                cx="256"
-                cy="200"
-                r={140 + i * 60} // bigger radius for outer layers
-                fill="#f5c211"
-                opacity="0"
-                filter="url(#glow)"
-              >
-                <animate
-                  data-group="halo"
-                  attributeName="opacity"
-                  values="0;0.2;0.5;0.7"
-                  keyTimes="0;0.3;0.7;1"
-                  begin="indefinite"
-                  dur={`${0.8 + i * 0.2}s`}
-                  fill="freeze"
-                />
-              </circle>
-            ))}
-
             {/* BULB */}
-            <circle cx="256" cy="200" r="80" fill="#333">
+            <rect x="176" y="120" width="160" height="160" fill="#333">
               <animate
                 data-group="bulb"
                 attributeName="fill"
@@ -99,7 +69,29 @@ export default function Home() {
                 dur="0.4s"
                 fill="freeze"
               />
-            </circle>
+            </rect>
+
+            {/* HALO / LIGHT SQUARES */}
+            {[0, 1, 2].map((i) => (
+              <rect
+                key={i}
+                x={120 - i * 20}
+                y={60 - i * 20}
+                width={272 + i * 40}
+                height={272 + i * 40}
+                fill="#f5c211"
+                opacity="0"
+              >
+                <animate
+                  data-group="halo"
+                  attributeName="opacity"
+                  values="0;1"
+                  begin="indefinite"
+                  dur="0.3s"
+                  fill="freeze"
+                />
+              </rect>
+            ))}
 
             {/* BASE */}
             <rect x="220" y="280" width="70" height="60" fill="#777">
