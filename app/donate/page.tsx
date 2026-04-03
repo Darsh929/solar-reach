@@ -6,8 +6,13 @@ import Link from "next/link";
 
 export default function Donate() {
   return (
-    <div className="mx-auto flex w-full max-w-(--breakpoint-lg) flex-col px-6 pb-20 sm:px-20 sm:pb-24">
-      <h1 className="mt-32 text-xl font-bold uppercase sm:mt-64">Support us</h1>
+    <div
+      className="mx-auto flex w-full max-w-(--breakpoint-lg) flex-col px-6 pb-20 sm:px-20 sm:pb-24"
+      style={{ backgroundColor: "#4D5669", color: "#000000" }}
+    >
+      <h1 className="mt-32 text-xl font-bold uppercase sm:mt-64">
+        Support us
+      </h1>
       <h1 className="mt-2 scroll-m-20 text-4xl font-extrabold tracking-tight">
         Be a catalyst for change
       </h1>
@@ -31,6 +36,7 @@ export default function Donate() {
         <strong>Join us today.</strong> Be part of a movement that brings light,
         hope, and possibility to those who need it most.
       </p>
+
       <div className="mt-10 flex flex-col items-center sm:mt-16">
         <Link
           href="https://www.paypal.com/donate/?hosted_button_id=QED7FXY72CW9Q"
@@ -38,8 +44,9 @@ export default function Donate() {
           rel="noopener noreferrer"
           className={cn(
             buttonVariants(),
-            "text-md border-foreground bg-background text-foreground hover:bg-yellow-4 w-full max-w-xs cursor-pointer rounded-none border-3 py-5 font-bold uppercase shadow-[4px_4px_0_var(--foreground)] transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[0px_0px_0_var(--foreground)] sm:max-w-sm md:max-w-md lg:max-w-lg",
+            "text-md w-full max-w-xs cursor-pointer rounded-none border-3 py-5 font-bold uppercase shadow-[4px_4px_0_var(--foreground)] transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[0px_0px_0_var(--foreground)] sm:max-w-sm md:max-w-md lg:max-w-lg"
           )}
+          style={{ backgroundColor: "#F5C211", color: "#000000", borderColor: "#000000" }}
         >
           Donate via
           <span className="sr-only"> PayPal (opens in a new tab)</span>
@@ -59,7 +66,7 @@ export default function Donate() {
             className="-mb-1 size-11"
             aria-hidden="true"
           >
-            <path d="M133 2.02v32.83h-7.47V2.02H133zM122.78 13.1v21.81h-6.64v-1.88c-.84.82-1.8 1.44-2.86 1.88-1.07.46-2.23.7-3.47.7-1.56 0-3.01-.29-4.34-.87-1.33-.61-2.49-1.44-3.47-2.48-.99-1.05-1.77-2.27-2.35-3.66-.55-1.42-.82-2.95-.82-4.58s.27-3.14.82-4.53c.58-1.42 1.36-2.66 2.35-3.71a10.45 10.45 0 0 1 3.47-2.44c1.33-.61 2.78-.92 4.34-.92 1.24 0 2.4.23 3.47.7 1.07.44 2.03 1.06 2.86 1.88v-1.88h6.64v-.02zm-11.77 15.87c1.36 0 2.47-.46 3.34-1.4.9-.93 1.35-2.12 1.35-3.57 0-1.45-.45-2.65-1.35-3.57-.87-.93-1.99-1.4-3.34-1.4-1.35 0-2.49.46-3.39 1.4-.87.93-1.31 2.12-1.31 3.57 0 1.45.44 2.65 1.31 3.57.9.93 2.03 1.4 3.39 1.4zM88.17 2.02c1.97 0 3.65.28 5.04.83 1.39.55 2.56 1.32 3.52 2.31.98 1.02 1.75 2.18 2.3 3.49.55 1.31.82 2.72.82 4.23 0 1.51-.27 2.92-.82 4.23a11.15 11.15 0 0 1-2.3 3.49c-.95.99-2.13 1.76-3.52 2.31-1.39.55-3.07.83-5.04.83h-3.6V34.9h-7.6V2.02h11.2zm-1.09 14.96c1.02 0 1.79-.1 2.35-.31.58-.23 1.06-.53 1.43-.87.78-.73 1.17-1.7 1.17-2.92s-.39-2.19-1.17-2.92c-.38-.35-.85-.63-1.43-.83-.55-.23-1.33-.35-2.35-.35h-2.52v8.2h2.52zM48.97 13.1h8.25l5.6 10.46h.09L67.9 13.1h7.64L59.17 45.98h-7.6l7.47-15.04L48.97 13.1zm-1.47 0v21.81h-6.64v-1.88c-.84.82-1.8 1.44-2.86 1.88-1.07.46-2.23.7-3.47.7-1.56 0-3.01-.29-4.34-.87-1.33-.61-2.49-1.44-3.47-2.48-.99-1.05-1.77-2.27-2.35-3.66-.55-1.42-.82-2.95-.82-4.58s.27-3.14.82-4.53c.58-1.42 1.36-2.66 2.35-3.71a10.35 10.35 0 0 1 3.47-2.44c1.33-.61 2.78-.92 4.34-.92 1.24 0 2.4.23 3.47.7 1.07.44 2.03 1.06 2.86 1.88v-1.88h6.64v-.02zM35.73 28.97c1.36 0 2.47-.46 3.35-1.4.9-.93 1.35-2.12 1.35-3.57 0-1.45-.45-2.65-1.35-3.57-.87-.93-1.99-1.4-3.35-1.4s-2.49.46-3.39 1.4c-.87.93-1.3 2.12-1.3 3.57 0 1.45.44 2.65 1.3 3.57.9.93 2.03 1.4 3.39 1.4zM13.2 2.02c1.97 0 3.65.28 5.04.83 1.39.55 2.56 1.32 3.52 2.31.98 1.02 1.75 2.18 2.3 3.49.55 1.31.82 2.72.82 4.23 0 1.51-.27 2.92-.82 4.23a11.15 11.15 0 0 1-2.3 3.49c-.95.99-2.13 1.76-3.52 2.31-1.39.55-3.07.83-5.04.83H9.6V34.9H2V2.02h11.2zm-1.08 14.96c1.02 0 1.79-.1 2.35-.31.58-.23 1.06-.53 1.43-.87.78-.73 1.17-1.7 1.17-2.92s-.39-2.19-1.17-2.92c-.38-.35-.85-.63-1.43-.83-.55-.23-1.33-.35-2.35-.35H9.6v8.2h2.52z" />
+            <path d="M133 2.02v32.83h-7.47V2.02H133zM122.78 13.1v21.81h-6.64v-1.88c-.84.82-1.8 1.44-2.86 1.88-1.07.46-2.23.7-3.47.7-1.56 0-3.01-.29-4.34-.87-1.33-.61-2.49-1.44-3.47-2.48-.99-1.05-1.77-2.27-2.35-3.66-.55-1.42-.82-2.95-.82-4.58s.27-3.14.82-4.53c.58-1.42 1.36-2.66 2.35-3.71a10.45 10.45 0 0 1 3.47-2.44c1.33-.61 2.78-.92 4.34-.92 1.24 0 2.4.23 3.47.7 1.07.44 2.03 1.06 2.86 1.88v-1.88h6.64v-.02z" />
           </svg>
         </Link>
       </div>
