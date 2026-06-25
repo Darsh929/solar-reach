@@ -1,4 +1,3 @@
-```tsx
 import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "@/components/footer";
@@ -38,4 +37,3 @@ export default function RootLayout({
     </html>
   );
 }
-```
