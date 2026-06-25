@@ -1,3 +1,4 @@
+```tsx
 import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "@/components/footer";
@@ -16,8 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-dark-4">
-      <body className="bg-background text-foreground">
+    <html lang="en">
+      <body
+        className="text-foreground"
+        style={{ backgroundColor: "#4D5669" }}
+      >
         <Header />
         {children}
         <Footer />
@@ -34,3 +38,4 @@ export default function RootLayout({
     </html>
   );
 }
+```
