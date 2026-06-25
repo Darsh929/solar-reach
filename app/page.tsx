@@ -1,3 +1,4 @@
+```tsx
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -137,18 +138,32 @@ export default function Home() {
           </svg>
         </div>
 
-        <div className="max-w-3xl text-center">
+        <div className="max-w-4xl text-center">
           <h2 className="text-4xl font-extrabold">
-            Brightening futures with solar
+            Brightening Futures with Solar
           </h2>
 
-          <p className="mt-4 text-lg">
-            At Solar Reach, we are a high school student-led nonprofit dedicated to expanding access to clean, reliable solar lighting for communities where electricity is limited or unavailable. We believe that something as simple as light can create opportunities for students to study after sunset, families to feel safer in their homes, and communities to become more self-sufficient. By raising funds and partnering with organizations that share our mission, we work to provide sustainable solar-powered solutions that have a lasting impact. Every donation helps bring renewable energy to people who need it most while reducing dependence on costly and polluting fuel sources. Our team is passionate about combining innovation, service, and environmental responsibility to make a meaningful difference. Together, we are working to brighten homes, empower communities, and create a more sustainable future—one solar light at a time.
+          <p className="mt-6 text-lg leading-8">
+            At Solar Reach, we are a high school student-led nonprofit dedicated
+            to expanding access to clean, reliable solar lighting for
+            communities where electricity is limited or unavailable. We believe
+            that something as simple as light can create opportunities for
+            students to study after sunset, families to feel safer in their
+            homes, and communities to become more self-sufficient. By raising
+            funds and partnering with organizations that share our mission, we
+            work to provide sustainable solar-powered solutions that have a
+            lasting impact. Every donation helps bring renewable energy to
+            people who need it most while reducing dependence on costly and
+            polluting fuel sources. Our team is passionate about combining
+            innovation, service, and environmental responsibility to make a
+            meaningful difference. Together, we are working to brighten homes,
+            empower communities, and create a more sustainable future—one solar
+            light at a time.
           </p>
         </div>
       </section>
 
-      {/* SECOND SECTION */}
+      {/* IMPACT */}
       <section className="flex min-h-screen flex-col items-center justify-center px-8 py-24">
         <h2 className="mb-16 text-5xl font-extrabold">
           Our Impact
@@ -183,6 +198,28 @@ export default function Home() {
           Donate Now
         </Link>
       </section>
+
+      {/* GALLERY */}
+      <section className="flex min-h-screen flex-col items-center justify-center px-8 py-24">
+        <h2 className="mb-14 text-5xl font-extrabold">
+          Our Work
+        </h2>
+
+        <div className="grid w-full max-w-7xl gap-12 md:grid-cols-2">
+          <div className="flex aspect-[4/3] items-center justify-center rounded-3xl border-4 border-dashed border-gray-500 bg-white/10 shadow-2xl">
+            <p className="text-3xl font-bold text-gray-600">
+              Enter Image Here
+            </p>
+          </div>
+
+          <div className="flex aspect-[4/3] items-center justify-center rounded-3xl border-4 border-dashed border-gray-500 bg-white/10 shadow-2xl">
+            <p className="text-3xl font-bold text-gray-600">
+              Enter Image Here
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
+```
