@@ -1,4 +1,3 @@
-```ts
 export const team = [
   {
     name: "Sanjey Saravanan",
@@ -17,5 +16,5 @@ export const team = [
     bio: "Enter text here lol",
   },
 ];
-```
+
 
