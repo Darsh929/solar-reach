@@ -143,9 +143,7 @@ export default function Home() {
           </h2>
 
           <p className="mt-4 text-lg">
-            At Solar Reach, we're committed to bringing sustainable,
-            solar-powered light to communities where reliable electricity is
-            scarce.
+            At Solar Reach, we are a high school student-led nonprofit dedicated to expanding access to clean, reliable solar lighting for communities where electricity is limited or unavailable. We believe that something as simple as light can create opportunities for students to study after sunset, families to feel safer in their homes, and communities to become more self-sufficient. By raising funds and partnering with organizations that share our mission, we work to provide sustainable solar-powered solutions that have a lasting impact. Every donation helps bring renewable energy to people who need it most while reducing dependence on costly and polluting fuel sources. Our team is passionate about combining innovation, service, and environmental responsibility to make a meaningful difference. Together, we are working to brighten homes, empower communities, and create a more sustainable future—one solar light at a time.
           </p>
         </div>
       </section>
