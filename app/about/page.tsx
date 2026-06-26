@@ -3,13 +3,15 @@ import { team } from "@/lib/team";
 
 export default function About() {
   return (
-    <div className="mx-auto flex w-full max-w-(--breakpoint-lg) flex-col px-6 pb-20 sm:px-20 sm:pb-24">
+    <div className="mx-auto flex w-full max-w-(--breakpoint-lg) flex-col px-6 pb-20 text-black sm:px-20 sm:pb-24">
       <h1 className="mt-32 text-xl font-bold uppercase sm:mt-64">
         Our Mission
       </h1>
+
       <h1 className="mt-2 scroll-m-20 text-4xl font-extrabold tracking-tight">
         Reaching out with solar
       </h1>
+
       <p className="mt-6 text-lg/7">
         At Solar Reach, we are a team of passionate high school students
         committed to making a positive impact on communities with limited access
@@ -33,11 +35,14 @@ export default function About() {
         role in bringing light to the places that need it most.
       </p>
 
-      <h1 className="mt-8 text-xl font-bold uppercase sm:mt-16">Our Team</h1>
-      <Separator className="bg-foreground mt-2"></Separator>
+      <h1 className="mt-8 text-xl font-bold uppercase sm:mt-16">
+        Our Team
+      </h1>
+
+      <Separator className="mt-2 bg-black" />
 
       <div className="mt-8">
-        <ul className="divide-foreground divide-y xl:col-span-3">
+        <ul className="divide-y divide-black xl:col-span-3">
           {team.map((person) => (
             <li
               key={person.name}
@@ -47,7 +52,10 @@ export default function About() {
                 <h3 className="text-lg/8 font-semibold tracking-tight">
                   {person.name}
                 </h3>
-                <p className="mt-2 text-base/7">{person.bio}</p>
+
+                <p className="mt-2 text-base/7">
+                  {person.bio}
+                </p>
               </div>
             </li>
           ))}
