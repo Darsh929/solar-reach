@@ -45,12 +45,12 @@ export default function Home() {
 
   return (
     <main
-      className="transition-colors duration-1000"
-      style={{ backgroundColor, color: "#000" }}
+      className="space-y-20 transition-colors duration-1000"
+      style={{ backgroundColor, color: "#fff" }}
     >
       {/* HERO */}
       <section
-        className="flex h-screen flex-col items-center justify-center gap-16 overflow-hidden px-8 font-[Cantarell] sm:px-20"
+        className="flex min-h-[85vh] flex-col items-center justify-center gap-8 overflow-hidden px-8 pt-16 pb-12 font-[Cantarell] sm:px-20"
         onClick={animate}
       >
         <div className="relative flex items-center justify-center">
@@ -58,7 +58,7 @@ export default function Home() {
             ref={svgRef}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 700 700"
-            className="h-[550px] w-[550px]"
+            className="h-[430px] w-[430px] md:h-[500px] md:w-[500px]"
           >
             {/* Halo */}
             {[
@@ -86,7 +86,7 @@ export default function Home() {
             ))}
 
             {/* Bulb */}
-            <ellipse cx="350" cy="360" rx="100" ry="120" fill="#FFD700">
+            <ellipse cx="350" cy="360" rx="100" ry="120" fill="#333">
               <animate
                 data-group="bulb"
                 attributeName="fill"
@@ -142,7 +142,7 @@ export default function Home() {
             Brightening Futures with Solar
           </h2>
 
-          <p className="mt-6 text-lg leading-8">
+          <p className="mt-6 text-lg leading-8 text-white/90">
             At Solar Reach, we are a high school student-led nonprofit dedicated
             to expanding access to clean, reliable solar lighting for
             communities where electricity is limited or unavailable. We believe
@@ -159,18 +159,21 @@ export default function Home() {
             empower communities, and create a more sustainable future—one solar
             light at a time.
           </p>
+
+          <div className="mt-8 animate-bounce text-4xl text-white/70">
+            ↓
+          </div>
         </div>
       </section>
-
-      {/* IMPACT */}
-      <section className="flex min-h-screen flex-col items-center justify-center px-8 py-24">
-        <h2 className="mb-16 text-5xl font-extrabold">
+            {/* IMPACT */}
+      <section className="flex flex-col items-center px-8 py-20">
+        <h2 className="mb-14 text-5xl font-extrabold">
           Our Impact
         </h2>
 
         <div className="grid w-full max-w-4xl gap-10 md:grid-cols-2">
-          <div className="rounded-3xl bg-white/15 p-10 text-center shadow-xl backdrop-blur">
-            <p className="text-lg font-semibold uppercase tracking-wide">
+          <div className="rounded-3xl bg-white/15 p-10 text-center shadow-xl backdrop-blur transition duration-300 hover:-translate-y-2 hover:scale-105 hover:bg-white/20">
+            <p className="text-lg font-semibold uppercase tracking-wide text-white/80">
               Money Donated
             </p>
 
@@ -179,8 +182,8 @@ export default function Home() {
             </h3>
           </div>
 
-          <div className="rounded-3xl bg-white/15 p-10 text-center shadow-xl backdrop-blur">
-            <p className="text-lg font-semibold uppercase tracking-wide">
+          <div className="rounded-3xl bg-white/15 p-10 text-center shadow-xl backdrop-blur transition duration-300 hover:-translate-y-2 hover:scale-105 hover:bg-white/20">
+            <p className="text-lg font-semibold uppercase tracking-wide text-white/80">
               Homes Brightened
             </p>
 
@@ -192,27 +195,27 @@ export default function Home() {
 
         <Link
           href="/donate"
-          className="mt-16 rounded-full bg-yellow-400 px-10 py-4 text-xl font-bold text-black transition hover:scale-105 hover:bg-yellow-300"
+          className="mt-14 rounded-full bg-yellow-400 px-10 py-4 text-xl font-bold text-black shadow-xl transition-all duration-300 hover:scale-105 hover:bg-yellow-300"
         >
           Donate Now
         </Link>
       </section>
 
       {/* GALLERY */}
-      <section className="flex min-h-screen flex-col items-center justify-center px-8 py-24">
+      <section className="flex flex-col items-center px-8 py-20">
         <h2 className="mb-14 text-5xl font-extrabold">
           Our Work
         </h2>
 
         <div className="grid w-full max-w-7xl gap-12 md:grid-cols-2">
-          <div className="flex aspect-[4/3] items-center justify-center rounded-3xl border-4 border-dashed border-gray-500 bg-white/10 shadow-2xl">
-            <p className="text-3xl font-bold text-gray-600">
+          <div className="flex aspect-[4/3] items-center justify-center rounded-3xl border-4 border-dashed border-white/30 bg-white/10 shadow-2xl transition duration-300 hover:scale-[1.02]">
+            <p className="text-3xl font-bold text-white/60">
               Enter Image Here
             </p>
           </div>
 
-          <div className="flex aspect-[4/3] items-center justify-center rounded-3xl border-4 border-dashed border-gray-500 bg-white/10 shadow-2xl">
-            <p className="text-3xl font-bold text-gray-600">
+          <div className="flex aspect-[4/3] items-center justify-center rounded-3xl border-4 border-dashed border-white/30 bg-white/10 shadow-2xl transition duration-300 hover:scale-[1.02]">
+            <p className="text-3xl font-bold text-white/60">
               Enter Image Here
             </p>
           </div>
