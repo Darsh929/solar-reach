@@ -13,7 +13,7 @@ export default function About() {
       </h1>
 
       <p className="mt-6 text-lg/7">
-        At Solar Reach, we are a team of passionate high school students
+        At Solar Reach, we are a team of passionate students
         committed to making a positive impact on communities with limited access
         to electricity.
         <br />
