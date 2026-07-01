@@ -3,7 +3,7 @@ import { team } from "@/lib/team";
 
 export default function About() {
   return (
-    <div className="mx-auto flex w-full max-w-(--breakpoint-lg) flex-col px-6 pb-20 text-black sm:px-20 sm:pb-24">
+    <div className="mx-auto flex w-full max-w-(--breakpoint-lg) flex-col px-6 pb-20 text-white sm:px-20 sm:pb-24">
       <h1 className="mt-32 text-xl font-bold uppercase sm:mt-64">
         Our Mission
       </h1>
@@ -36,13 +36,13 @@ export default function About() {
       </p>
 
       <h1 className="mt-8 text-3xl font-bold sm:mt-16">
-          Our Team
+        Our Team
       </h1>
 
-      <Separator className="mt-2 bg-black" />
+      <Separator className="mt-2 bg-white" />
 
       <div className="mt-8">
-        <ul className="divide-y divide-black xl:col-span-3">
+        <ul className="divide-y divide-white xl:col-span-3">
           {team.map((person) => (
             <li
               key={person.name}
