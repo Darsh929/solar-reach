@@ -35,7 +35,7 @@ export default function About() {
         role in bringing light to the places that need it most.
       </p>
 
-      <h1 className="mt-8 text-xl font-bold uppercase sm:mt-16">
+      <h1 className="mt-8 text-3xl font-bold uppercase sm:mt-16">
         Our Team
       </h1>
 
