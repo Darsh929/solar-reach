@@ -8,8 +8,8 @@ export const team = [
     bio: "I believe that engineering and hardware prototyping should be used to solve critical environmental challenges, which is why I work as the President of Solar Reach dedicated to delivering accessible clean energy solutions to communities in need. In this role, I oversee our technical initiatives and manage overall project coordination. Additionally, I focus on ensuring our projects create tangible impact through communities.",
   },
   {
-    name: "Ruhan Sathyanath",
-    bio: "Enter text here lol",
+    name: "Ruhan Sathyanath | Operations and Resource Manager",
+    bio: "As Operations and Resource Manager at Solar Reach, I focus on optimizing the efficiency of our projects. From resource allocation to execution, I focus on utilizing funds to drive as much meaningful impact as possible. Overall, I align operational excellence with our mission to help bring sustainable solutions to communities in need.",
   },
   {
     name: "Sebastian James Landicho",
