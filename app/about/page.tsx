@@ -48,7 +48,7 @@ export default function About() {
               key={person.name}
               className="flex flex-col gap-10 py-12 first:pt-0 last:pb-0"
             >
-              <div className="max-w-xl flex-auto">
+              <div className="max-w-full flex-auto">
                 <h3 className="text-lg/8 font-semibold tracking-tight">
                   {person.name}
                 </h3>
