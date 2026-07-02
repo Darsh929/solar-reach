@@ -33,6 +33,14 @@ export default function Donate() {
         <strong>Join us today.</strong> Be part of a movement that brings light,
         hope, and possibility to those who need it most.
       </p>
+      href="https://www.paypal.com/donate/?hosted_button_id=NEG8XU6FJ3924"
+        target="_blank"
+      >
+        <img
+          src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
+          alt="Donate with PayPal"
+        />
+      </a>
     </div>
   );
 }
