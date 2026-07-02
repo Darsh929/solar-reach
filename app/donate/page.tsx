@@ -34,15 +34,11 @@ export default function Donate() {
         hope, and possibility to those who need it most.
       </p>
       <a
-      href="https://www.paypal.com/donate/?hosted_button_id=NEG8XU6FJ3924"
+       href="https://www.paypal.com/donate/?hosted_button_id=NEG8XU6FJ3924"
         target="_blank"
-        className="mt-6"
+        className="mt-8 w-fit rounded-full bg-[#FFC439] px-10 py-4 text-xl font-bold text-black hover:opacity-90"
       >
-        <img
-          src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
-          alt="Donate with PayPal"
-          className="h-16"
-        />
+        Donate with PayPal
       </a>
     </div>
   );
