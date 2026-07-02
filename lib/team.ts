@@ -12,8 +12,8 @@ export const team = [
     bio: "As Operations and Resource Manager at Solar Reach, I focus on optimizing the efficiency of our projects. From resource allocation to execution, I focus on utilizing funds to drive as much meaningful impact as possible. Overall, I align operational excellence with our mission to help bring sustainable solutions to communities in need.",
   },
   {
-    name: "Sebastian James Landicho",
-    bio: "Enter text here lol",
+    name: "Sebastian James Landicho | Social Media Manager",
+    bio: "At Solar Reach, my work as the Social Media Manager includes spreading awareness about our cause across multiple platforms and grow the community of supporters who support our work. I create informational content that lets the audience know exactly the issues that this organization handles.",
   },
 ];
 
