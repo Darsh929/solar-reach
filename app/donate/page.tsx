@@ -4,7 +4,7 @@ export default function Donate() {
   return (
     <div
       className="mx-auto flex w-full max-w-(--breakpoint-lg) flex-col px-6 pb-20 sm:px-20 sm:pb-24"
-      style={{ backgroundColor: "#4D5669", color: "#000000" }}
+      style={{ backgroundColor: "#4D5669", color: "#ffffff" }}
     >
       <h1 className="mt-32 text-xl font-bold uppercase sm:mt-64">
         Support us
