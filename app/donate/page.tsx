@@ -36,10 +36,12 @@ export default function Donate() {
       <a
       href="https://www.paypal.com/donate/?hosted_button_id=NEG8XU6FJ3924"
         target="_blank"
+        className="mt-6"
       >
         <img
           src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
           alt="Donate with PayPal"
+          className="h-16"
         />
       </a>
     </div>
