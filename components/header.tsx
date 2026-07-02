@@ -19,6 +19,7 @@ export default function Header() {
 
   return (
     <header className="absolute -top-5 right-0 left-0 z-50 mx-auto ml-0 flex max-w-(--breakpoint-lg) items-center justify-between px-6 sm:top-0 sm:ml-auto">
+    <Link href="/">
       <svg
         role="img"
         aria-label="Solar Reach Initiative logo"
@@ -52,6 +53,7 @@ export default function Header() {
           />
         </g>
       </svg>
+    </Link>
       <div
         className="relative -top-1 flex flex-col justify-end sm:mr-0"
         onMouseLeave={() => setIsHovered(false)}
