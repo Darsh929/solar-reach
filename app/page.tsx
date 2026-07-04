@@ -208,17 +208,17 @@ export default function Home() {
         </h2>
 
         <div className="grid w-full max-w-7xl gap-12 md:grid-cols-2">
-          <div className="flex aspect-[4/3] items-center justify-center rounded-3xl border-4 border-dashed border-white/30 bg-white/10 shadow-2xl transition duration-300 hover:scale-[1.02]">
-            <p className="text-3xl font-bold text-white/60">
-              Enter Image Here
-            </p>
-          </div>
+         <img
+            src="/team/works1.jpg"
+            alt="Our work"
+            className="aspect-[4/3] w-full rounded-3xl object-cover shadow-2xl transition duration-300 hover:scale-[1.02]"
+/>
 
-          <div className="flex aspect-[4/3] items-center justify-center rounded-3xl border-4 border-dashed border-white/30 bg-white/10 shadow-2xl transition duration-300 hover:scale-[1.02]">
-            <p className="text-3xl font-bold text-white/60">
-              Enter Image Here
-            </p>
-          </div>
+          <img
+            src="/team/works2.jpg"
+            alt="Our work"
+            className="aspect-[4/3] w-full rounded-3xl object-cover shadow-2xl transition duration-300 hover:scale-[1.02]"
+/>
         </div>
       </section>
     </main>
