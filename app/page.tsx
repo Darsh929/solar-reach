@@ -215,7 +215,7 @@ export default function Home() {
 />
 
           <img
-            src="/team/works2.jpg"
+            src="/team/works2.JPG"
             alt="Our work"
             className="aspect-[4/3] w-full rounded-3xl object-cover shadow-2xl transition duration-300 hover:scale-[1.02]"
 />
