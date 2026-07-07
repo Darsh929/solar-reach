@@ -84,56 +84,206 @@ export default function Home() {
                 />
               </circle>
             ))}
-
-            {/* Bulb */}
-            <ellipse cx="350" cy="360" rx="100" ry="120" fill="#333">
+            {/* Hanging Wire */}
+            <line
+              x1="350"
+              y1="0"
+              x2="350"
+              y2="155"
+              stroke="#8A8A8A"
+              strokeWidth="8"
+            >
               <animate
                 data-group="bulb"
-                attributeName="fill"
-                values="#333;#FFD700"
+                attributeName="stroke"
+                values="#8A8A8A;#E8E8E8"
                 begin="indefinite"
                 dur="0.4s"
                 fill="freeze"
               />
-            </ellipse>
+            </line>
 
-            {/* Neck */}
+            {/* Socket Cap */}
             <rect
-              x="330"
-              y="240"
-              width="40"
-              height="60"
-              rx="6"
+              x="334"
+              y="155"
+              width="32"
+              height="22"
+              rx="3"
               fill="#777"
             >
               <animate
                 data-group="bulb"
                 attributeName="fill"
-                values="#777;#CCC"
+                values="#777;#CFCFCF"
                 begin="indefinite"
                 dur="0.4s"
                 fill="freeze"
               />
             </rect>
 
-            {/* Wire */}
+            {/* Glass Bulb */}
+            <path
+              d="
+                M350 180
+                C288 180 240 228 240 292
+                C240 340 262 378 292 405
+                C312 424 322 442 322 466
+                L322 486
+                L378 486
+                L378 466
+                C378 442 388 424 408 405
+                C438 378 460 340 460 292
+                C460 228 412 180 350 180
+                Z
+              "
+              fill="#2E2E2E"
+              stroke="#707070"
+              strokeWidth="5"
+            >
+              <animate
+                data-group="bulb"
+                attributeName="fill"
+                values="#2E2E2E;#FFD84D"
+                begin="indefinite"
+                dur="0.4s"
+                fill="freeze"
+              />
+              <animate
+                data-group="bulb"
+                attributeName="stroke"
+                values="#707070;#FFF4AF"
+                begin="indefinite"
+                dur="0.4s"
+                fill="freeze"
+              />
+            </path>
+
+            {/* Glass Highlight */}
+            <path
+              d="
+                M300 230
+                C280 250 270 285 276 325
+              "
+              fill="none"
+              stroke="rgba(255,255,255,.45)"
+              strokeWidth="10"
+              strokeLinecap="round"
+            />
+
+            {/* Filament Supports */}
             <line
-              x1="350"
-              y1="240"
-              x2="350"
-              y2="0"
-              stroke="#888"
-              strokeWidth="8"
+              x1="332"
+              y1="360"
+              x2="332"
+              y2="315"
+              stroke="#777"
+              strokeWidth="4"
             >
               <animate
                 data-group="bulb"
                 attributeName="stroke"
-                values="#888;#DDD"
+                values="#777;#FFF2A6"
                 begin="indefinite"
                 dur="0.4s"
                 fill="freeze"
               />
             </line>
+
+            <line
+              x1="368"
+              y1="360"
+              x2="368"
+              y2="315"
+              stroke="#777"
+              strokeWidth="4"
+            >
+              <animate
+                data-group="bulb"
+                attributeName="stroke"
+                values="#777;#FFF2A6"
+                begin="indefinite"
+                dur="0.4s"
+                fill="freeze"
+              />
+            </line>
+
+            {/* Filament */}
+            <path
+              d="M332 315 Q350 295 368 315"
+              fill="none"
+              stroke="#888"
+              strokeWidth="4"
+              strokeLinecap="round"
+            >
+              <animate
+                data-group="bulb"
+                attributeName="stroke"
+                values="#888;#FFF176"
+                begin="indefinite"
+                dur="0.4s"
+                fill="freeze"
+              />
+            </path>
+
+            {/* Metal Screw Base */}
+            <rect
+              x="322"
+              y="486"
+              width="56"
+              height="58"
+              rx="6"
+              fill="#8A8A8A"
+            >
+              <animate
+                data-group="bulb"
+                attributeName="fill"
+                values="#8A8A8A;#D7D7D7"
+                begin="indefinite"
+                dur="0.4s"
+                fill="freeze"
+              />
+            </rect>
+
+            {[498, 510, 522, 534].map((y) => (
+              <line
+                key={y}
+                x1="322"
+                y1={y}
+                x2="378"
+                y2={y}
+                stroke="#5D5D5D"
+                strokeWidth="3"
+              >
+                <animate
+                  data-group="bulb"
+                  attributeName="stroke"
+                  values="#5D5D5D;#F0F0F0"
+                  begin="indefinite"
+                  dur="0.4s"
+                  fill="freeze"
+                />
+              </line>
+            ))}
+
+            {/* Bottom Contact */}
+            <rect
+              x="340"
+              y="544"
+              width="20"
+              height="10"
+              rx="2"
+              fill="#999"
+            >
+              <animate
+                data-group="bulb"
+                attributeName="fill"
+                values="#999;#EEE"
+                begin="indefinite"
+                dur="0.4s"
+                fill="freeze"
+              />
+            </rect>
           </svg>
         </div>
 
@@ -165,7 +315,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-            {/* IMPACT */}
+       {/* IMPACT */}
       <section className="flex flex-col items-center px-8 py-20">
         <h2 className="mb-14 text-5xl font-extrabold">
           Our Impact
@@ -224,3 +374,4 @@ export default function Home() {
     </main>
   );
 }
+            
