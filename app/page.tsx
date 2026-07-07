@@ -84,7 +84,24 @@ export default function Home() {
                 />
               </circle>
             ))}
-
+            {/* Hanging Wire */}
+            <line
+              x1="350"
+              y1="0"
+              x2="350"
+              y2="155"
+              stroke="#8A8A8A"
+              strokeWidth="8"
+            >
+              <animate
+                data-group="bulb"
+                attributeName="stroke"
+                values="#8A8A8A;#E8E8E8"
+                begin="indefinite"
+                dur="0.4s"
+                fill="freeze"
+              />
+            </line>
 
             {/* Socket Cap */}
             <rect
