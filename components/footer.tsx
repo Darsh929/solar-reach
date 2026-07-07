@@ -12,7 +12,10 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-dark-4">
+    <footer
+  className="transition-colors duration-1000"
+  style={{ backgroundColor: "#4D5669" }}
+>
       <div className="mx-auto w-full max-w-7xl px-6 pt-8 pb-10 sm:pt-10 lg:px-8">
         <svg
           aria-hidden="true"
