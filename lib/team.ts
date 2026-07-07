@@ -1,7 +1,8 @@
 export const team = [
   {
-    name: "Sanjey Saravanan",
-    bio: "I have an interest in computers and web design. At Solar Reach, I manage the website.",
+    name: "Sanjey Saravanan | Website and Distribution Manager ",
+    bio: "As the Website and Distribution Manager at Solar Reach, I combine my passion for engineering and technology with meaningful service by managing our website and helping coordinate the distribution of solar-powered lights to communities across Africa. I enjoy designing and improving digital experiences while ensuring our mission reaches as many people as possible. Through my work at Solar Reach, I strive to use innovation and problem-solving to help provide reliable, sustainable lighting to those who need it most.
+",
   },
   {
     name: "Darsh Aggarwal | President",
