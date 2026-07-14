@@ -35,7 +35,7 @@ export default function EmailForm() {
 
   function onSubmit(values: z.infer<typeof emailSchema>) {
     const baseUrl =
-      "https://docs.google.com/forms/u/0/d/e/1FAIpQLSck7xgzEnACKgVz1LkIPcRAqTafc01DUwpEhAqeoIVRW1TF1A/formResponse?";
+      "https://docs.google.com/forms/d/e/1FAIpQLSd9bU0Z4QY6AltiXsZskGUeonj0rdQbl6whh9cKWfi6we8-mg/viewform?usp=publish-editor";
     const params = new URLSearchParams();
 
     Object.entries(values).forEach(([key, value]) => {
