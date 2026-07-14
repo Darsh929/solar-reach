@@ -34,8 +34,8 @@ export default function EmailForm() {
   });
 
   function onSubmit(values: z.infer<typeof emailSchema>) {
-    const baseUrl =
-      "https://docs.google.com/forms/d/e/1FAIpQLSd9bU0Z4QY6AltiXsZskGUeonj0rdQbl6whh9cKWfi6we8-mg/viewform?usp=publish-editor";
+const baseUrl =
+  "https://docs.google.com/forms/d/e/1FAIpQLSd9bU0Z4QY6AltiXsZskGUeonj0rdQbl6whh9cKWfi6we8-mg/formResponse";
     const params = new URLSearchParams();
 
     Object.entries(values).forEach(([key, value]) => {
@@ -49,7 +49,13 @@ export default function EmailForm() {
       }
     });
 
-    axios.post(`${baseUrl}${params.toString()}`).catch(() => {});
+    axios
+  .post(`${baseUrl}?${params.toString()}`, null, {
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+  })
+  .catch(() => {});
     toast.success("Successfully subscribed to the newsletter!", {
       description: "Thank you for joining our mailing list.",
     });
