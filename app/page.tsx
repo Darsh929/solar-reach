@@ -54,12 +54,12 @@ export default function Home() {
         onClick={animate}
       >
         <div className="relative flex items-center justify-center">
-          <svg
-            ref={svgRef}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 700 700"
-            className="h-[430px] w-[430px] md:h-[500px] md:w-[500px]"
-          >
+<svg
+  ref={svgRef}
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 700 700"
+  className="h-[430px] w-[430px] rotate-180 md:h-[500px] md:w-[500px]"
+>
             {/* Halo */}
             {[
               { r: 180, fill: "#FFEB3B", opacity: 0.3 },
