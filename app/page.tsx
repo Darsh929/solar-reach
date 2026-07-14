@@ -58,7 +58,7 @@ export default function Home() {
   ref={svgRef}
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 700 700"
-  className="h-[430px] w-[430px] rotate-180 md:h-[500px] md:w-[500px]"
+  className="h-[430px] w-[430px] md:h-[500px] md:w-[500px]"
 >
             {/* Halo */}
             {[
@@ -102,6 +102,7 @@ export default function Home() {
                 fill="freeze"
               />
             </line>
+  <g transform="rotate(180 350 155)">
 
             {/* Socket Cap */}
             <rect
@@ -284,7 +285,8 @@ export default function Home() {
                 fill="freeze"
               />
             </rect>
-          </svg>
+      </g>    
+  </svg>
         </div>
 
         <div className="max-w-4xl text-center">
