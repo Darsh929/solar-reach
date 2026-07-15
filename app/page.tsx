@@ -109,14 +109,14 @@ export default function Home() {
           {!isLightOn && (
             <div className="absolute inset-0 z-50 cursor-pointer"></div>
           )}
-          <div className="-mt-20 flex min-h-screen min-w-screen flex-col items-start justify-center sm:items-start">
+         <div className="-mt-20 flex h-auto min-w-screen flex-col items-start justify-center sm:items-start">
             <div className="relative flex h-full w-full items-center justify-center">
               <svg
                 ref={svgRef}
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
                 overflow="visible"
-                className="size-80"
+                className="size-156"
               >
                 <ellipse
                   cx="256"
