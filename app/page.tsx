@@ -316,7 +316,7 @@ export default function Home() {
 
       {/* GALLERY */}
       <section className="flex flex-col items-center px-8 py-20">
-        <h2 className="mb-14 text-5xl font-extrabold">
+       <h2 className="mb-14 text-5xl font-extrabold text-white">
           Our Work
         </h2>
 
