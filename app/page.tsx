@@ -116,7 +116,7 @@ export default function Home() {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
                 overflow="visible"
-                className="size-156"
+                className="size-80"
               >
                 <ellipse
                   cx="256"
