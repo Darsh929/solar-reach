@@ -290,7 +290,7 @@ export default function Home() {
               Money Donated
             </p>
 
-            <h3 className="mt-4 text-6xl font-extrabold">
+           <h3 className="mt-4 text-6xl font-extrabold text-white">
               $0
             </h3>
           </div>
@@ -300,7 +300,7 @@ export default function Home() {
               Homes Brightened
             </p>
 
-            <h3 className="mt-4 text-6xl font-extrabold">
+           <h3 className="mt-4 text-6xl font-extrabold text-white">
               0
             </h3>
           </div>
