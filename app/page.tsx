@@ -242,10 +242,10 @@ export default function Home() {
                     begin="indefinite"
                     dur="0.2s"
                     fill="freeze"
-                    keyTimes="0;1"
-            </rect>
-      </g>    
-  </svg>
+                   keyTimes="0;1"
+                  />
+                </path>
+              </svg>
         </div>
 
         <div className="max-w-4xl text-center">
