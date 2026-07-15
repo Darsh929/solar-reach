@@ -251,7 +251,7 @@ export default function Home() {
         </div>
 
         <div className="max-w-4xl text-center">
-          <h2 className="text-4xl font-extrabold">
+          <h2 className="text-4xl font-extrabold text-white">
             Brightening Futures with Solar
           </h2>
 
@@ -280,7 +280,7 @@ export default function Home() {
       </div>
        {/* IMPACT */}
       <section className="flex flex-col items-center px-8 py-20">
-        <h2 className="mb-14 text-5xl font-extrabold">
+        <h2 className="mb-14 text-5xl font-extrabold text-white">
           Our Impact
         </h2>
 
