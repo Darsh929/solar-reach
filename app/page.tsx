@@ -275,9 +275,9 @@ export default function Home() {
 
           <div className="mt-8 animate-bounce text-4xl text-white/70">
             ↓
-          </div>
+         </div>
         </div>
-      </section>
+      </div>
        {/* IMPACT */}
       <section className="flex flex-col items-center px-8 py-20">
         <h2 className="mb-14 text-5xl font-extrabold">
