@@ -245,7 +245,9 @@ export default function Home() {
                    keyTimes="0;1"
                   />
                 </path>
-              </svg>
+             </svg>
+            </div>
+          </div>
         </div>
 
         <div className="max-w-4xl text-center">
