@@ -128,7 +128,7 @@ export default function Home() {
                   <animate
                     data-group="halo"
                     attributeName="opacity"
-                    values="0;1"
+                    values="0;0.3"
                     begin="indefinite"
                     dur="0.5s"
                     fill="freeze"
@@ -145,7 +145,7 @@ export default function Home() {
                   <animate
                     data-group="halo"
                     attributeName="opacity"
-                    values="0;1"
+                   values="0;0.3"
                     begin="indefinite"
                     dur="0.5s"
                     fill="freeze"
@@ -162,7 +162,7 @@ export default function Home() {
                   <animate
                     data-group="halo"
                     attributeName="opacity"
-                    values="0;1"
+                   values="0;0.3"
                     begin="indefinite"
                     dur="0.5s"
                     fill="freeze"
