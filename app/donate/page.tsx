@@ -5,14 +5,21 @@ import { useEffect, useState } from "react";
 const SHEET_URL =
   "https://script.google.com/macros/s/AKfycbzgS7BfzmTlAGEolKkKA5HCFcQbGLb-AI-e2QrMF0FvlUjhR6gszpwHE_KuqZYdTGTEzA/exec";
 
+type Donation = {
+  name: string;
+  amount: number;
+};
+
 export default function Donate() {
-  const [donations, setDonations] = useState([]);
+  const [donations, setDonations] = useState<Donation[]>([]);
 
   useEffect(() => {
     fetch(SHEET_URL)
       .then((res) => res.json())
       .then((data) => setDonations(data))
-      .catch((error) => console.error("Error loading donations:", error));
+      .catch((error) =>
+        console.error("Error loading donations:", error)
+      );
   }, []);
 
   const totalRaised = donations.reduce(
@@ -59,8 +66,13 @@ export default function Donate() {
       <div className="mt-12 grid gap-6 sm:grid-cols-2">
         <div className="rounded-2xl bg-white/10 p-8 text-center">
           <p className="text-4xl font-extrabold">
-            ${totalRaised.toLocaleString("en-US")}
+            $
+            {totalRaised.toLocaleString("en-US", {
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 2,
+            })}
           </p>
+
           <p className="mt-2 text-sm font-bold uppercase tracking-wide">
             Total Raised
           </p>
@@ -68,6 +80,7 @@ export default function Donate() {
 
         <div className="rounded-2xl bg-white/10 p-8 text-center">
           <p className="text-4xl font-extrabold">{supporterCount}</p>
+
           <p className="mt-2 text-sm font-bold uppercase tracking-wide">
             Supporters
           </p>
