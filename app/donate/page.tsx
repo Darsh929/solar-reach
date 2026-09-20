@@ -10,8 +10,11 @@ type Donation = {
   amount: number;
 };
 
+const SUPPORTERS_PER_PAGE = 15;
+
 export default function Donate() {
   const [donations, setDonations] = useState<Donation[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     fetch(SHEET_URL)
@@ -28,6 +31,27 @@ export default function Donate() {
   );
 
   const supporterCount = donations.length;
+
+  // Pagination
+  const totalPages = Math.ceil(supporterCount / SUPPORTERS_PER_PAGE);
+
+  const startIndex = (currentPage - 1) * SUPPORTERS_PER_PAGE;
+  const currentDonations = donations.slice(
+    startIndex,
+    startIndex + SUPPORTERS_PER_PAGE
+  );
+
+  const goToNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const goToPreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
 
   return (
     <div
@@ -106,24 +130,49 @@ export default function Donate() {
             Be the first to support Solar Reach!
           </p>
         ) : (
-          <div className="mt-6 overflow-hidden rounded-2xl bg-white/10">
-            {donations.map((donation, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-between border-b border-white/10 px-6 py-4 last:border-b-0"
-              >
-                <span className="font-semibold">{donation.name}</span>
+          <>
+            <div className="mt-6 overflow-hidden rounded-2xl bg-white/10">
+              {currentDonations.map((donation, index) => (
+                <div
+                  key={startIndex + index}
+                  className="flex items-center justify-between border-b border-white/10 px-6 py-4 last:border-b-0"
+                >
+                  <span className="font-semibold">{donation.name}</span>
 
-                <span className="font-bold">
-                  $
-                  {Number(donation.amount).toLocaleString("en-US", {
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2,
-                  })}
-                </span>
-              </div>
-            ))}
-          </div>
+                  <span className="font-bold">
+                    $
+                    {Number(donation.amount).toLocaleString("en-US", {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
+                    })}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* Pagination Controls */}
+            <div className="mt-6 flex items-center justify-center gap-4">
+              <button
+                onClick={goToPreviousPage}
+                disabled={currentPage === 1}
+                className="rounded-full bg-white/10 px-5 py-2 font-semibold transition hover:bg-white/20 disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                ← Previous
+              </button>
+
+              <span className="font-semibold">
+                Page {currentPage} of {totalPages}
+              </span>
+
+              <button
+                onClick={goToNextPage}
+                disabled={currentPage === totalPages}
+                className="rounded-full bg-white/10 px-5 py-2 font-semibold transition hover:bg-white/20 disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                Next →
+              </button>
+            </div>
+          </>
         )}
       </div>
     </div>
