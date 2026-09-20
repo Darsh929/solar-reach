@@ -12,7 +12,7 @@ export const team = [
     bio: "As Operations and Resource Manager at Solar Reach, I focus on optimizing the efficiency of our projects. From resource allocation to execution, I focus on utilizing funds to drive as much meaningful impact as possible. Overall, I align operational excellence with our mission to help bring sustainable solutions to communities in need.",
   },
   {
-    name: "Sebastian James Landicho | Outreach Manager",
+    name: "Raj Sevak | Outreach Manager",
     bio: "At Solar Reach, my work as the Outreach Manager includes spreading awareness about our cause across multiple platforms and grow the community of supporters who support our work. I create informational content that lets the audience learn about the issues that this organization handles.",
   },
 ];
