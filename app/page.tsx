@@ -291,17 +291,17 @@ export default function Home() {
             </p>
 
            <h3 className="mt-4 text-6xl font-extrabold text-white">
-              $0
+              $2249
             </h3>
           </div>
 
           <div className="rounded-3xl bg-white/15 p-10 text-center shadow-xl backdrop-blur transition duration-300 hover:-translate-y-2 hover:scale-105 hover:bg-white/20">
             <p className="text-lg font-semibold uppercase tracking-wide text-white/80">
-              Homes Brightened
+              Lights Shipped
             </p>
 
            <h3 className="mt-4 text-6xl font-extrabold text-white">
-              0
+              218
             </h3>
           </div>
         </div>
