@@ -32,11 +32,17 @@ export default function Donate() {
 
   const supporterCount = donations.length;
 
+  // Sort donations from highest amount to lowest
+  const sortedDonations = [...donations].sort(
+    (a, b) => Number(b.amount || 0) - Number(a.amount || 0)
+  );
+
   // Pagination
   const totalPages = Math.ceil(supporterCount / SUPPORTERS_PER_PAGE);
 
   const startIndex = (currentPage - 1) * SUPPORTERS_PER_PAGE;
-  const currentDonations = donations.slice(
+
+  const currentDonations = sortedDonations.slice(
     startIndex,
     startIndex + SUPPORTERS_PER_PAGE
   );
