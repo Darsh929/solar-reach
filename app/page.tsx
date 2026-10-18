@@ -291,7 +291,7 @@ export default function Home() {
             </p>
 
            <h3 className="mt-4 text-6xl font-extrabold text-white">
-              $2249
+              $2399
             </h3>
           </div>
 
