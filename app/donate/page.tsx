@@ -90,6 +90,8 @@ export default function Donate() {
         <br />
         <strong>Join us today.</strong> Be part of a movement that brings light,
         hope, and possibility to those who need it most.
+
+        (TOTAL MONEY RAISED NUMBER TAKES A FEW SECONDS TO LOAD)
       </p>
 
       {/* Donation Stats */}
